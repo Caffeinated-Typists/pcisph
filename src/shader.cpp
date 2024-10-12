@@ -84,6 +84,21 @@ void Shader::checkCompileErrors(unsigned int shader, std::string type) {
     }
 }
 
+void Shader::checkIfAttributeExists(const std::string &name) const {
+    if (glGetAttribLocation(shaderProgram, name.c_str()) == -1) {
+        std::cerr << "ERROR::SHADER::ATTRIBUTE_NOT_FOUND: " << name << std::endl;
+    }
+}
+
+void Shader::enableVertexAttribute(const std::string &name) const {
+    glEnableVertexAttribArray(glGetAttribLocation(shaderProgram, name.c_str()));
+}
+
+void Shader::setVertexAttribPointer(const std::string &name, int size, unsigned int type, bool normalized, int stride, const void *offset) const{
+    glVertexAttribPointer(glGetAttribLocation(shaderProgram, name.c_str()), size, type, normalized, stride, offset);
+}
+
+
 void Shader::setFloat4v(const std::string &name, const float value[4]) const {
     glUniform4fv(glGetUniformLocation(shaderProgram, name.c_str()), 1, value);
 }
@@ -98,4 +113,8 @@ void Shader::setInt(const std::string &name, int value) const {
 
 void Shader::setMat4(const std::string &name, glm::mat4 &value) const{
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void Shader::setFloat2v(const std::string &name, float x, float y) const {
+    glUniform2f(glGetUniformLocation(shaderProgram, name.c_str()), x, y);
 }
