@@ -16,12 +16,11 @@
  * 
  * It will contain all the information about a single particle, like position, velocity, mass, etc.
  */
-class Particle
+class Point
 {
 private:
     /* data */
-    glm::vec3 position;
-    glm::vec3 velocity;
+    glm::vec2 velocity;
     
     unsigned int num_points;
     unsigned int num_indexes;
@@ -34,22 +33,25 @@ private:
     unsigned int IBO;
     
 public:
-    Particle(glm::vec3 _position);
-    ~Particle();
+    glm::vec2 position;
 
-    /**
-     * @brief Set the elements of the particles in VBO and IBO
-     * 
-     * @param VAO The Vertex Array Object to bind the VBO and IBO to
-     * @param shader The shader object to use for rendering
-     */
-    void render(unsigned int&, Shader&);
+public:
+    Point(glm::vec2 _position);
+    ~Point();
+
+    // /**
+    //  * @brief Set the elements of the particles in VBO and IBO
+    //  * 
+    //  * @param VAO The Vertex Array Object to bind the VBO and IBO to
+    //  * @param shader The shader object to use for rendering
+    //  */
+    // void render(unsigned int&, Shader&);
 
 
-    /**
-     * @brief Draw the particle
-     * 
-     * @param VAO The Vertex Array Object to bind the VBO and IBO to
-     */
-    void draw(unsigned int& );
+    // /**
+    //  * @brief Draw the particle
+    //  * 
+    //  * @param VAO The Vertex Array Object to bind the VBO and IBO to
+    //  */
+    // void draw(unsigned int& );
 };

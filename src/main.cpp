@@ -2,7 +2,7 @@
 
 #include "shader.hpp"
 #include "utils.hpp"
-#include "particle.hpp"
+#include "particles.hpp"
 
 struct Vertex {
     glm::vec3 position;
@@ -29,26 +29,21 @@ int main(int argc, char const *argv[]){
     ImGuiIO &io = ImGui::GetIO();
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    Vertex vertices[] = {
-        {{0.5f, 0.5f, 0.0f}, {1.0f, 0.0f, 1.0f}},
-        {{0.5f, -0.5f, 0.0f}, {0.0f, 1.0f, 0.0f}},
-        {{-0.5f, -0.5f, 0.0f}, {0.0f, 0.0f, 1.0f}},
-        {{-0.5f, 0.5f, 0.0f}, {1.0f, 1.0f, 0.0f}}
-    };
-
-    unsigned int indices[] = {
-        0, 1, 3,
-        1, 2, 3
-    };
-
-
     unsigned int VAO;
 
 
     shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
-    Particle particle(glm::vec3(0.0f, 0.0f, 0.0f));    
 
-    particle.render(VAO, *shader);
+    Particles particles;
+    particles.reserve(100);
+
+    for(int i = -5; i < 5; i++){
+        for(int j = -5; j < 5; j++){
+            Point p(glm::vec2(i, j));
+            particles.addParticle(p);
+        }
+    }
+
 
     shader->use();
 
@@ -78,10 +73,11 @@ int main(int argc, char const *argv[]){
         
         glDisable(GL_POINT_SMOOTH);
         shader->use();
-        particle.draw(VAO);
+        particles.draw(VAO, *shader);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
+        glfwSwapInterval(0);
 
     }
 
@@ -98,7 +94,7 @@ void setupModelTransformation(Shader* shader) {
 
 void setupViewTransformation(Shader* shader) {
     // Viewing transformations (World -> Camera coordinates)
-    glm::mat4 viewT = glm::lookAt(glm::vec3(0.0, 0.0, 5.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+    glm::mat4 viewT = glm::lookAt(glm::vec3(0.0, 0.0, 40.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
     shader->setMat4("view", viewT);
 }
 
