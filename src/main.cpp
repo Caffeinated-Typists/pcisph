@@ -1,57 +1,58 @@
-#define STB_IMAGE_IMPLEMENTATION
-
 #include "shader.hpp"
 #include "utils.hpp"
 #include "particles.hpp"
+#include "solver.hpp"
 
-struct Vertex {
-    glm::vec3 position;
-    glm::vec3 color;
-};
 
 Shader* shader;
 int screenWidth = 800;
 int screenHeight = 600;
 
-void setupModelTransformation(Shader*);
-void setupViewTransformation(Shader*);
-void setupProjectionTransformation(Shader*, int, int );
-
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height){
     glViewport(0, 0, width, height);
-    setupProjectionTransformation(shader, width, height);
 }
 
 
-int main(int argc, char const *argv[]){
+int main(){
     GLFWwindow *window = utils::setupWindow(800, 600);
     ImGuiIO &io = ImGui::GetIO();
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     unsigned int VAO;
-
-
     shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
 
-    Particles particles;
-    particles.reserve(100);
+    std::vector<Point> points;
+    points.reserve(48);
 
-    for(int i = -5; i < 5; i++){
-        for(int j = -5; j < 5; j++){
-            Point p(glm::vec2(i, j));
-            particles.addParticle(p);
+
+    // keep all coordinates in the range [-1, 1]
+    int particles_per_row = 8;
+    int particles_per_col = 6;
+    float x = -1.0;
+    float y = 1.0;
+
+    float x_offset = 0.1;
+    float y_offset = -0.2;
+
+    float dx = 2.0 / particles_per_row;
+    float dy = -2.0 / particles_per_col;
+
+    for (int i = 0; i < particles_per_col; i++){
+        for (int j = 0; j < particles_per_row; j++){
+            points.emplace_back(glm::vec2(x + x_offset, y + y_offset));
+            x += dx;
         }
+        x = -1.0;
+        y += dy;
     }
 
 
+    auto ptr = std::make_shared<std::vector<Point>>(points);
+    Particles particles(ptr);
+    Solver solver(ptr);
+
     shader->use();
-
-    setupModelTransformation(shader);
-    setupViewTransformation(shader);
-    setupProjectionTransformation(shader, screenWidth, screenHeight);
-
-    shader->setFloat2v("resolution", (float)screenWidth, (float)screenHeight);
 
     while (!glfwWindowShouldClose(window)){
         glfwPollEvents();
@@ -59,6 +60,15 @@ int main(int argc, char const *argv[]){
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+
+        // solver->printPositions();
+        
+        for (int _ = 0; _ < Solver::STEPS; _++){
+            solver.ExternalForces();
+            solver.Integrate();
+            solver.BoundaryCheck();
+        }
+
 
         {
             ImGui::Begin("Frames");
@@ -77,29 +87,11 @@ int main(int argc, char const *argv[]){
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
-        glfwSwapInterval(0);
+        // glfwSwapInterval(0);
 
     }
 
     utils::cleanup(window);
 
     return 0;
-}
-
-void setupModelTransformation(Shader* shader) {
-    // Modelling transformations (Model -> World coordinates)
-    glm::mat4 modelT = glm::translate(glm::mat4(1.0f), glm::vec3(0.0, 0.0, 0.0)); // Model coordinates are the world coordinates
-    shader->setMat4("model", modelT);
-}
-
-void setupViewTransformation(Shader* shader) {
-    // Viewing transformations (World -> Camera coordinates)
-    glm::mat4 viewT = glm::lookAt(glm::vec3(0.0, 0.0, 40.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-    shader->setMat4("view", viewT);
-}
-
-void setupProjectionTransformation(Shader* shader, int screen_width, int screen_height) {
-    // Projection transformation
-    glm::mat4 projectionT = glm::perspective(45.0f, (float)screen_width / (float)screen_height, 0.1f, 1000.0f);
-    shader->setMat4("projection", projectionT);
 }

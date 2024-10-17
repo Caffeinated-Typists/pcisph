@@ -17,23 +17,11 @@
  * It will contain all the information about a single particle, like position, velocity, mass, etc.
  */
 class Point
-{
-private:
-    /* data */
-    glm::vec2 velocity;
-    
-    unsigned int num_points;
-    unsigned int num_indexes;
-
-    float* points;
-    float* normals;
-    short* indexes;
-
-    unsigned int VBO;
-    unsigned int IBO;
-    
+{   
 public:
     glm::vec2 position;
+    glm::vec2 velocity;
+    constexpr static float radius = 0.03f;
 
 public:
     Point(glm::vec2 _position);

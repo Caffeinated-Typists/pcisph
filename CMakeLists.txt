@@ -17,18 +17,14 @@ list(REMOVE_ITEM IMGUI_SOURCES "${PROJECT_SOURCE_DIR}/libs/imgui/imgui_impl_glut
 file (GLOB SRC "src/*.cpp")
 file(GLOB GLAD_SOURCES "libs/glad/*.c")
 file(GLOB INCLUDES "${PROJECT_SOURCE_DIR}/include")
-file(GLOB TINY_OBJ_LOADER_SOURCES "libs/tiny_obj_loader/*.cpp")
-file (GLOB STB_IMAGE "libs/stb_image/stb_image.cpp")
 
 set(SOURCES
     ${SRC}
     ${IMGUI_SOURCES}
-	${TINY_OBJ_LOADER_SOURCES}
 	${GLAD_SOURCES}
-	${STB_IMAGE}
 )
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wshadow -Wcast-align -Wlogical-op -g")
 
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG")
 
@@ -38,9 +34,7 @@ set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_NAME "${TARGET}.out")
 
 target_include_directories(${TARGET} PRIVATE
 	${PROJECT_SOURCE_DIR}/src
-	${PROJECT_SOURCE_DIR}/libs/stb_image
 	${PROJECT_SOURCE_DIR}/libs/imgui
-	${PROJECT_SOURCE_DIR}/libs/tiny_obj_loader
 	${GLFW_INCLUDE_DIRS}
 	${OPENGL_INCLUDE_DIR}
 	${GLM_INCLUDE_DIRS/../include}
