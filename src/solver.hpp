@@ -3,6 +3,8 @@
 #include <memory>
 #include <glm/glm.hpp>
 #include <vector>
+#include <algorithm>
+#include <execution>    
 #include <point.hpp>
 #include <particles.hpp>
 
@@ -19,6 +21,13 @@ public:
     const static int FPS = 60;
     constexpr static float DT = 1.0 / (float)(FPS * STEPS);
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
+
+// Grid Parameters
+private:
+    constexpr static float smoothing_length = 6 * Point::radius;
+    constexpr static unsigned int grid_width = 2 / smoothing_length;
+    constexpr static unsigned int grid_height = 2 / smoothing_length;
+    constexpr static unsigned int grid_size = grid_width * grid_height;
 
 
 public:
@@ -47,5 +56,9 @@ public:
      */
     void printPositions();
 
+    /**
+     * @brief Update the grid after the particles have been updated
+     */
+    void UpdateGrid();
 
 };

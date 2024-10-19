@@ -13,27 +13,28 @@ Solver::~Solver(){
 }
 
 void Solver::BoundaryCheck(){
-    float d;
-    for (auto& p : *particles){
+    std::for_each(std::execution::par, particles->begin(), particles->end(), [&](Point& p){
+        float d;
         for (auto& b : boundary){
             d = glm::dot(p.position, b) - 1;
             if ((d = std::max(0.0f, d)) < Point::radius){
                 p.velocity += b * (Point::radius - d) / DT;
             }
         }
-    }
+    });
+
 }
 
 void Solver::ExternalForces(){
-    for (auto& p : *particles){
+    std::for_each(std::execution::par, particles->begin(), particles->end(), [&](Point& p){
         p.velocity += GRAVITY * DT;
-    }
+    });
 }
 
 void Solver::Integrate(){
-    for (auto& p : *particles){
+    std::for_each(std::execution::par ,particles->begin(), particles->end(), [&](Point& p){
         p.position += p.velocity * DT;
-    }
+    });
 }
 
 

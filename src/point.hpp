@@ -22,24 +22,12 @@ public:
     glm::vec2 position;
     glm::vec2 velocity;
     constexpr static float radius = 0.03f;
+    int grid_x;
+    int grid_y;
+
 
 public:
-    Point(glm::vec2 _position);
-    ~Point();
+    Point(glm::vec2 _position) : position(_position), velocity(glm::vec2(0.0f)) {}
+    ~Point() {}
 
-    // /**
-    //  * @brief Set the elements of the particles in VBO and IBO
-    //  * 
-    //  * @param VAO The Vertex Array Object to bind the VBO and IBO to
-    //  * @param shader The shader object to use for rendering
-    //  */
-    // void render(unsigned int&, Shader&);
-
-
-    // /**
-    //  * @brief Draw the particle
-    //  * 
-    //  * @param VAO The Vertex Array Object to bind the VBO and IBO to
-    //  */
-    // void draw(unsigned int& );
 };

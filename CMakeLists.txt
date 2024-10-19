@@ -10,6 +10,7 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 find_package(GLEW REQUIRED)
+find_package(TBB REQUIRED)
 
 file(GLOB IMGUI_SOURCES "libs/imgui/*.cpp" )
 list(REMOVE_ITEM IMGUI_SOURCES "${PROJECT_SOURCE_DIR}/libs/imgui/imgui_impl_glut.cpp")
@@ -40,5 +41,5 @@ target_include_directories(${TARGET} PRIVATE
 	${GLM_INCLUDE_DIRS/../include}
 	${INCLUDES}
 	)
-target_link_libraries(${TARGET} ${OPENGL_LIBRARIES} dl glfw GLEW::GLEW)
+target_link_libraries(${TARGET} ${OPENGL_LIBRARIES} dl glfw GLEW::GLEW TBB::tbb)
 

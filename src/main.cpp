@@ -5,8 +5,8 @@
 
 
 Shader* shader;
-int screenWidth = 800;
-int screenHeight = 600;
+int screenWidth = 1280;
+int screenHeight = 720;
 
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height){
@@ -15,7 +15,7 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height){
 
 
 int main(){
-    GLFWwindow *window = utils::setupWindow(800, 600);
+    GLFWwindow *window = utils::setupWindow(screenWidth, screenHeight);
     ImGuiIO &io = ImGui::GetIO();
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
@@ -23,27 +23,25 @@ int main(){
     shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
 
     std::vector<Point> points;
-    points.reserve(48);
+    points.reserve(30000);
 
 
     // keep all coordinates in the range [-1, 1]
-    int particles_per_row = 8;
-    int particles_per_col = 6;
-    float x = -1.0;
-    float y = 1.0;
-
-    float x_offset = 0.1;
-    float y_offset = -0.2;
+    int particles_per_row = 100 + 2;
+    int particles_per_col = 100 + 2;
 
     float dx = 2.0 / particles_per_row;
     float dy = -2.0 / particles_per_col;
 
-    for (int i = 0; i < particles_per_col; i++){
-        for (int j = 0; j < particles_per_row; j++){
-            points.emplace_back(glm::vec2(x + x_offset, y + y_offset));
+    float x = -1.0 + dx;
+    float y = 1.0 - dy;
+
+    for (int i = 0; i < particles_per_col - 1; i++){
+        for (int j = 0; j < particles_per_row - 1; j++){
+            points.emplace_back(glm::vec2(x, y));
             x += dx;
         }
-        x = -1.0;
+        x = -1.0 + dx;
         y += dy;
     }
 
@@ -87,7 +85,7 @@ int main(){
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
-        // glfwSwapInterval(0);
+        glfwSwapInterval(0);
 
     }
 
