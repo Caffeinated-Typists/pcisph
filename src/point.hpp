@@ -21,13 +21,29 @@ class Point
 public:
     glm::vec2 position;
     glm::vec2 velocity;
-    constexpr static float radius = 0.03f;
+
+    glm::vec2 predicted_position;
+    glm::vec2 predicted_velocity;
+
+    float predicted_density;
+    float corrected_pressure;
+
+    glm::vec2 dv_without_pressure;
+    glm::vec2 dv_pressure;
+
+    constexpr static float radius = 0.01f;
     int grid_x;
     int grid_y;
-
+    
+    const static unsigned int MAX_NEIGHBOURS = 64;
+    std::vector<unsigned short> neighbours; // neighbour indices
+    std::vector<double> r; // distance to neighbours
+    size_t size; // current size of the neighbourhood
 
 public:
-    Point(glm::vec2 _position) : position(_position), velocity(glm::vec2(0.0f)) {}
+    Point(glm::vec2 _position) 
+        :   position(_position), 
+            velocity(glm::vec2(0.0f)) {}
     ~Point() {}
 
 };

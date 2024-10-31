@@ -8,7 +8,6 @@ Shader* shader;
 int screenWidth = 1280;
 int screenHeight = 720;
 
-
 void framebuffer_size_callback(GLFWwindow *window, int width, int height){
     glViewport(0, 0, width, height);
 }
@@ -27,21 +26,21 @@ int main(){
 
 
     // keep all coordinates in the range [-1, 1]
-    int particles_per_row = 100 + 2;
-    int particles_per_col = 100 + 2;
+    int particles_per_row = 50 + 1;
+    int particles_per_col = 50 + 1;
 
-    float dx = 2.0 / particles_per_row;
-    float dy = -2.0 / particles_per_col;
+    float dx = 1.0 / particles_per_row;
+    float dy = -1.0 / particles_per_col;
 
-    float x = -1.0 + dx;
-    float y = 1.0 - dy;
+    float x = -0.5 + dx;
+    float y = 0.5 - dy;
 
     for (int i = 0; i < particles_per_col - 1; i++){
         for (int j = 0; j < particles_per_row - 1; j++){
             points.emplace_back(glm::vec2(x, y));
             x += dx;
         }
-        x = -1.0 + dx;
+        x = -0.5 + dx;
         y += dy;
     }
 
@@ -59,8 +58,9 @@ int main(){
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // solver->printPositions();
         
+        solver.UpdateNeighbourhood();
+
         for (int _ = 0; _ < Solver::STEPS; _++){
             solver.ExternalForces();
             solver.Integrate();
