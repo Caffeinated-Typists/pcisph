@@ -9,6 +9,7 @@
 #include <list>
 #include <algorithm>
 #include <execution>    
+#include <memory>
 #include <point.hpp>
 #include <particles.hpp>
 
@@ -20,19 +21,30 @@ private:
     std::vector<glm::vec2> boundary;    
 
 // Solver Parameters
-public:
-    const static int STEPS = 10;
+private:
+    const static int MIN_STEPS = 5;
+    const static int MAX_STEPS = 100;
     const static int FPS = 60;
-    constexpr static float DT = 1.0 / (float)(FPS * STEPS);
+    constexpr static float BOUNDARY_THRESHOLD = 1e-4;
+    constexpr static float DT = 1.0 / (float)(FPS * 10);
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float ELASTICITY = 0.5f;
 
-// Grid Parameters
-private:
-    constexpr static float EPS = 0.0000001f;
-    constexpr static float EPS2 = EPS * EPS;
     constexpr static float smoothing_length = 6 * Point::radius;
     constexpr static float smoothing_length2 = smoothing_length * smoothing_length;
+
+    // TODO: Not sure if to use smoothing length or half of it
+    constexpr static float KERNEL_FACTOR = 10.0 / (7.0 * M_PI * smoothing_length2);
+    constexpr static float GRAD_KERNEL_FACTOR = KERNEL_FACTOR / smoothing_length;
+
+    float DELTA = ScalingFactor();
+
+    std::atomic<float> max_density_error = 0.0f;
+
+// Grid Parameters
+private:
+    constexpr static float EPS = 1e-7;
+    constexpr static float EPS2 = EPS * EPS;
     constexpr static unsigned int grid_width = 2 / smoothing_length;
     constexpr static unsigned int grid_height = 2 / smoothing_length;
     constexpr static unsigned int grid_size = grid_width * grid_height;
@@ -43,11 +55,20 @@ public:
     Solver (std::shared_ptr<std::vector<Point>> _particles);
     ~Solver();
 
+    /**
+     * @brief Update the particles
+     */
+    void Update();
 
     /**
      * @brief Ensure that the particles do not go out of bounds
      */
     void BoundaryCheck(); 
+
+    /**
+     * @brief ensure that predicted positions are within the boundaries
+     */
+    void BoundaryCheckPredicted();
 
     /**
      * @brief Apply external forces to the particles, mainly gravity here
@@ -65,6 +86,11 @@ public:
     void printPositions();
 
     /**
+     * @brief print the velocities of the particles
+     */
+    void printVelocities();
+
+    /**
      * @brief Update the grid after the particles have been updated, and update the neighbourhood
      */
     void UpdateNeighbourhood();
@@ -79,6 +105,16 @@ public:
      */
     void PredictVelocityPosition();
 
+    /**
+     * @brief Predict the density of the particles, and calculate the pressure
+     */
+    void updateCorrectDensityPressure();
+
+    /**
+     * @brief Calculate the velocity change due to pressure
+     * 
+     */
+    void CalVelocityDueToPressure();
 
     /**
      * 
@@ -109,6 +145,12 @@ public:
      * 
      * @return The gradient of the kernel function
      */
-    inline glm::vec3 grad_kernel(glm::vec2 r);
+    inline glm::vec2 grad_kernel(glm::vec2& r);
+
+
+    /**
+     * @brief Calculate value of delta as described Equation 8 of PCISPH paper
+     */
+    float ScalingFactor();
 
 };

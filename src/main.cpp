@@ -33,7 +33,7 @@ int main(){
     float dy = -1.0 / particles_per_col;
 
     float x = -0.5 + dx;
-    float y = 0.5 - dy;
+    float y = 0.1 - dy;
 
     for (int i = 0; i < particles_per_col - 1; i++){
         for (int j = 0; j < particles_per_row - 1; j++){
@@ -59,14 +59,7 @@ int main(){
         ImGui::NewFrame();
 
         
-        solver.UpdateNeighbourhood();
-
-        for (int _ = 0; _ < Solver::STEPS; _++){
-            solver.ExternalForces();
-            solver.Integrate();
-            solver.BoundaryCheck();
-        }
-
+        solver.Update();
 
         {
             ImGui::Begin("Frames");

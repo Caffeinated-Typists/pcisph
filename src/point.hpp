@@ -25,8 +25,12 @@ public:
     glm::vec2 predicted_position;
     glm::vec2 predicted_velocity;
 
+    float density;
     float predicted_density;
     float corrected_pressure;
+
+    constexpr static float mass = 1.0f;
+    constexpr static float REST_DENSITY = 1000.0f;
 
     glm::vec2 dv_without_pressure;
     glm::vec2 dv_pressure;
@@ -37,7 +41,6 @@ public:
     
     const static unsigned int MAX_NEIGHBOURS = 64;
     std::vector<unsigned short> neighbours; // neighbour indices
-    std::vector<double> r; // distance to neighbours
     size_t size; // current size of the neighbourhood
 
 public:
