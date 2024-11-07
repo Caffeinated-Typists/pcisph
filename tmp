@@ -1,0 +1,5206 @@
+Initialized OpenGL Succesfully 
+OpenGL Version: 4.6 (Core Profile) Mesa 24.2.6-arch1.1
+Particle mass: 0.131634
+Delta: 2.6043e-09
+0 0
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.01635
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.0327
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.04905
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.0654
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.08175
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.0981
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.11445
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.1308
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.14715
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.1635
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.17985
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.1962
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.21255
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.2289
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.24525
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.2616
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.27795
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.2943
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.31065
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.327
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.34335
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.3597
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.37605
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.3924
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.40875
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.4251
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.44145
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.4578
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.47415
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.4905
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.50685
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.5232
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.53955
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.5559
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.57225
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.5886
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.60495
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.6213
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.63765
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.654
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.67035
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.6867
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.70305
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.7194
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.73575
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.7521
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.76845
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.784801
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.801151
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.817501
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.833851
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.850201
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.866551
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.882901
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.899251
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.915601
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.931951
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.948301
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.964651
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.981001
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -0.997351
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.0137
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.03005
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.0464
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.06275
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.0791
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.09545
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.1118
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.12815
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.1445
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.16085
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.1772
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.19355
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.2099
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.22625
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.2426
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.25895
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.2753
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.29165
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.308
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.32435
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.3407
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.35705
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.3734
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.38975
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.4061
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.42245
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.4388
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.45515
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.4715
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.48785
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.5042
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.52055
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.5369
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.55325
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.5696
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.58595
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.6023
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.61865
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.635
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.65135
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.6677
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.68405
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.7004
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.71675
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.7331
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.74945
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.7658
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.78215
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.7985
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.81485
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.8312
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.84755
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.8639
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.88025
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.8966
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.91295
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.9293
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.94565
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.962
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.97835
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -1.9947
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -2.01105
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -2.0274
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -2.04375
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -2.0601
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+0 -2.07645
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-9.44918e-08 -2.0928
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-6.49584e-07 -2.10915
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-3.24187e-06 -2.12548
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-3.24186e-06 -2.14182
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-1.12417e-05 -2.15809
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-3.12962e-05 -2.17435
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-3.12956e-05 -2.19062
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00010621 -2.20657
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000106209 -2.22287
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000179068 -2.23862
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000191052 -2.25483
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000273025 -2.27033
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000341382 -2.28634
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000413827 -2.30164
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000650199 -2.31699
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.000657618 -2.33252
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00109374 -2.347
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00109343 -2.36271
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00160708 -2.3765
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00160662 -2.39222
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00217114 -2.40543
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00217046 -2.42111
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00275039 -2.43397
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0027492 -2.44946
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00349249 -2.46139
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00349068 -2.47674
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00432878 -2.48795
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00432623 -2.50321
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00527617 -2.51366
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00527254 -2.52879
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0063954 -2.53815
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00639078 -2.55327
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00758051 -2.56206
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00757419 -2.57704
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00901676 -2.58476
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.00900797 -2.59956
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0108157 -2.60568
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0108052 -2.62049
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0124718 -2.6269
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0124568 -2.6414
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0145686 -2.64626
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0145484 -2.6605
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0167813 -2.66484
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0167534 -2.6787
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0192532 -2.68212
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0192172 -2.6957
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0217077 -2.69909
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0216562 -2.71199
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0247958 -2.71336
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0247328 -2.72602
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.027442 -2.72775
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0273595 -2.73987
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0305435 -2.74075
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0304233 -2.7517
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0341126 -2.75072
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0339828 -2.76191
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0370551 -2.76122
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.03689 -2.77177
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0402072 -2.77069
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0399828 -2.78004
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0443566 -2.77622
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0440623 -2.78441
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0471852 -2.78352
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0474542 -2.79029
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0504165 -2.79016
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0520593 -2.79278
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0534131 -2.79658
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0575326 -2.79129
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0579506 -2.79877
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.06154 -2.78747
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0611792 -2.79698
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0651629 -2.78272
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0648291 -2.79383
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0706196 -2.77606
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0701622 -2.7858
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0749534 -2.76659
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0743993 -2.77555
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0780193 -2.7618
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0771566 -2.76724
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0821738 -2.75092
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0813955 -2.75389
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0868948 -2.73854
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0854117 -2.73897
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0911692 -2.7234
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0898871 -2.72272
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0957471 -2.70908
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0951886 -2.70279
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.102257 -2.68706
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.101288 -2.67882
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.108593 -2.66218
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.110145 -2.64154
+Number of neighbours: 10
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.111937 -2.63623
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.116651 -2.60587
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.116985 -2.60478
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.122903 -2.56569
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.122724 -2.56862
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.128124 -2.52253
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.127389 -2.52906
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.133327 -2.48056
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.132653 -2.48972
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.138592 -2.43545
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.138337 -2.44731
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.14454 -2.38898
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.144877 -2.40279
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.151489 -2.34372
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.152508 -2.35926
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.158879 -2.29984
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.160027 -2.31436
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.168089 -2.25482
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.169382 -2.26783
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.171079 -2.16053
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.114047 -1.81988
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.114047 -1.83623
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0960005 -1.78749
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0951292 -1.79992
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0802615 -1.76499
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0802615 -1.78134
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0730978 -1.7604
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0727852 -1.77323
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0782938 -1.75752
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0815846 -1.75544
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.0991431 -1.73975
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.108307 -1.70212
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.120996 -1.70295
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.134187 -1.65025
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.145152 -1.65569
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.161052 -1.59963
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.16976 -1.60334
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.185557 -1.5435
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.190722 -1.54973
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.203155 -1.49445
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.207968 -1.49869
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.219316 -1.44272
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.222779 -1.44725
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.235362 -1.39896
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.238203 -1.40162
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.250889 -1.35334
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.252577 -1.35635
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.266258 -1.31364
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.267333 -1.31351
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.28086 -1.2716
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.282009 -1.27137
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.294805 -1.23455
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.295919 -1.23002
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.307244 -1.19561
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.309678 -1.186
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.318468 -1.16347
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.319993 -1.14663
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.327076 -1.13261
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.329298 -1.11413
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.335805 -1.10374
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.336914 -1.07973
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.343771 -1.0751
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.346626 -1.05145
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.352728 -1.05054
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.356674 -1.02581
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.36268 -1.02692
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.367713 -1.00236
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.372947 -1.00615
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.379607 -0.980843
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.383799 -0.987513
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.389829 -0.959792
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.392874 -0.968309
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.400157 -0.940413
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.402379 -0.950179
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.409902 -0.924252
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.411606 -0.933826
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.420253 -0.90722
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.420714 -0.918361
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.429024 -0.892104
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.429365 -0.902164
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.437684 -0.877229
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.438107 -0.88639
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.444189 -0.857963
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.444642 -0.866669
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.453558 -0.841165
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.454152 -0.848631
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.461586 -0.82509
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.462318 -0.831256
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.468593 -0.809804
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.469409 -0.81517
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.474474 -0.794062
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.475322 -0.798276
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.478936 -0.77897
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.479847 -0.782295
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.482943 -0.764109
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.48388 -0.766927
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.4867 -0.750086
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.487665 -0.752114
+Number of neighbours: 11
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-0.490616 -0.73425
+Number of neighbours: 12
+p.dv_pressure: -nan -nan
+p.dv_pressure: -nan -nan
+p.dv_pressure: -nan -nan
+p.dv_pressure: -nan -nan
+p.dv_pressure: -nan -nan
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+Max steps reached
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+Max steps reached
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+Max steps reached
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+-nan -nan
+Number of neighbours: 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0
+p.dv_pressure: 0 0

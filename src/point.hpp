@@ -29,8 +29,7 @@ public:
     float predicted_density;
     float corrected_pressure;
 
-    constexpr static float mass = 1.0f;
-    constexpr static float REST_DENSITY = 1000.0f;
+    // static float mass;
 
     glm::vec2 dv_without_pressure;
     glm::vec2 dv_pressure;

@@ -25,17 +25,22 @@ private:
     const static int MIN_STEPS = 5;
     const static int MAX_STEPS = 100;
     const static int FPS = 60;
-    constexpr static float BOUNDARY_THRESHOLD = 1e-4;
+    constexpr static float BOUNDARY_THRESHOLD = 1e-3;
     constexpr static float DT = 1.0 / (float)(FPS * 10);
+    // constexpr static float DT = 1e-3;
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
-    constexpr static float ELASTICITY = 0.5f;
+    constexpr static float VISCOSITY_CONSTANT = 0.5f;
+    constexpr static float C_S = 100.0f; // Speed of sound in liquid
+    constexpr static float REST_DENSITY = 1000.0f;
+    
+    float PARTICLE_MASS;
 
     constexpr static float smoothing_length = 6 * Point::radius;
     constexpr static float smoothing_length2 = smoothing_length * smoothing_length;
 
     // TODO: Not sure if to use smoothing length or half of it
     constexpr static float KERNEL_FACTOR = 10.0 / (7.0 * M_PI * smoothing_length2);
-    constexpr static float GRAD_KERNEL_FACTOR = KERNEL_FACTOR / smoothing_length;
+    constexpr static float GRAD_KERNEL_FACTOR = 1.0 * KERNEL_FACTOR / smoothing_length;
 
     float DELTA = ScalingFactor();
 
@@ -114,7 +119,7 @@ public:
      * @brief Calculate the velocity change due to pressure
      * 
      */
-    void CalVelocityDueToPressure();
+    void CalcDvPressure();
 
     /**
      * 
