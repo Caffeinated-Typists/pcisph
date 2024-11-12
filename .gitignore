@@ -34,3 +34,6 @@
 # folders
 build/
 .vscode/
+
+# log files
+log.txt

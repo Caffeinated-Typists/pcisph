@@ -23,13 +23,15 @@ Solver::Solver(std::shared_ptr<std::vector<Point>> _particles)
     
     Solver::PARTICLE_MASS = REST_DENSITY / density_sum;
 
+    DELTA = ScalingFactor();
+
     // initialize density
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
         p.density = 1000.0f;
     });
 
-    // std::cout << "Particle mass: " << Solver::PARTICLE_MASS << std::endl;
-    // std::cout << "Delta: " << DELTA << std::endl;
+    std::cout << "Particle mass: " << Solver::PARTICLE_MASS << std::endl;
+    std::cout << "Delta: " << DELTA << std::endl;
 }
 
 Solver::~Solver(){
@@ -86,8 +88,6 @@ void Solver::BoundaryCheck(){
 }
 
 
-
-
 void Solver::BoundaryCheckPredicted(){
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
         if (p.predicted_position.x < -1.0 + BOUNDARY_THRESHOLD || p.predicted_position.x > 1.0 - BOUNDARY_THRESHOLD) {
@@ -101,7 +101,6 @@ void Solver::BoundaryCheckPredicted(){
 
     });
 }
-
 
 void Solver::ExternalForces(){
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
@@ -141,7 +140,6 @@ void Solver::Integrate(){
     });
 }
 
-
 void Solver::printPositions(){
     auto p = (*particles)[0];
     std::cout << p.position.x << " " << p.position.y << std::endl;
@@ -151,7 +149,6 @@ void Solver::printVelocities(){
     auto p = (*particles)[0];
     std::cout << p.velocity.x << " " << p.velocity.y << std::endl;
 }
-
 
 void Solver::UpdateNeighbourhood(){
 
@@ -253,16 +250,22 @@ void Solver::CalcDvPressure(){
 
 inline glm::vec2 Solver::grad_kernel(glm::vec2& r){
     float r_len = glm::length(r);
-    auto r_dir = r / r_len;    
 
+    if (r_len < EPS)
+        return glm::vec2(0.0f);
+
+    auto r_dir = r / r_len;    
     float q = r_len / smoothing_length;
 
+
+    glm::vec2 rval = glm::vec2(0.0f);
+
     if (q < 1.0)
-        return (float)((GRAD_KERNEL_FACTOR) * (-3.0 * q + 2.25 * q * q)) * r_dir;
+        rval = (float)((GRAD_KERNEL_FACTOR) * (-3.0 * q + 2.25 * q * q)) * r_dir;
     else if (q < 2.0)
-        return (float)((GRAD_KERNEL_FACTOR) * -0.75 * ((2.0 - q) * (2.0 - q))) * r_dir;
+        rval = (float)((GRAD_KERNEL_FACTOR) * -0.75 * ((2.0 - q) * (2.0 - q))) * r_dir;
     
-    return glm::vec2(0.0f); 
+    return rval;
 
 }
 
@@ -296,7 +299,9 @@ float Solver::ScalingFactor(){
         }
     }
 
-    auto beta = 2 * glm::pow((DT * Solver::PARTICLE_MASS / REST_DENSITY), 2);
-    return -1.0 / (beta * glm::dot(grad_sum, grad_sum) - sum);
+    double ratio = (DT * Solver::PARTICLE_MASS / REST_DENSITY);
+    double beta = 2 * ratio * ratio;
+
+    return -1.0 / (beta * (glm::dot(grad_sum, grad_sum) - sum));
 
 }

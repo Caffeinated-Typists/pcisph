@@ -31,11 +31,12 @@ private:
     const static int FPS = 60;
     constexpr static float BOUNDARY_THRESHOLD = 1e-3;
     constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
-    constexpr static float DT = 1.0 / (float)(FPS * 20);
+    // constexpr static float DT = 1.0 / (float)(FPS * 20);
+    constexpr static float DT = 1e-3;
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float VISCOSITY_CONSTANT = 0.5f;
     constexpr static float C_S = 100.0f; // Speed of sound in liquid
-    constexpr static float REST_DENSITY = 100.0f;
+    constexpr static float REST_DENSITY = 1000.0f;
     
     float PARTICLE_MASS;
 
@@ -52,7 +53,7 @@ private:
 
 // Grid Parameters
 private:
-    constexpr static float EPS = 1e-7;
+    constexpr static float EPS = 1e-4;
     constexpr static float EPS2 = EPS * EPS;
     constexpr static unsigned int grid_width = 2 / smoothing_length;
     constexpr static unsigned int grid_height = 2 / smoothing_length;

@@ -114,6 +114,7 @@ std::string Logger::getDvInfo(int idx){
         ss << "Neighbour " << p.neighbours[i] << ", ";
         ss << "Density: " << neighbour.density << ", ";
         ss << "Corrected Pressure: " << neighbour.corrected_pressure << ", ";
+        ss << "Distance: " << glm::length(p.position - neighbour.position) << ", ";
         ss << "\n";
     }
     
