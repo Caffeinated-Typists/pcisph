@@ -1,6 +1,7 @@
 #include <solver.hpp>
 
-Solver::Solver(std::shared_ptr<std::vector<Point>> _particles) : particles(_particles) {
+Solver::Solver(std::shared_ptr<std::vector<Point>> _particles) 
+    : particles(_particles), logger("log.txt", this) {
     boundary = {
         glm::vec2(-1.0, 0.0),
         glm::vec2(0.0, -1.0),
@@ -36,14 +37,7 @@ Solver::~Solver(){
 
 
 void Solver::Update(){
-    // printPositions();
-    // printVelocities();
     UpdateNeighbourhood();
-
-    // print number of neighbours of first particle
-    // auto p = (*particles)[0];
-    // std::cout << "Number of neighbours: " << p.size << std::endl;
-
     ExternalForces();
 
     // fill corrected pressure and dv pressure to 0
@@ -62,11 +56,10 @@ void Solver::Update(){
         BoundaryCheckPredicted();
         updateCorrectDensityPressure();
         CalcDvPressure();
-        auto p = (*particles)[0];
-        // std::cout << "p.dv_pressure: " << p.dv_pressure.x << " " << p.dv_pressure.y << std::endl;
         it++;
 
-        // std::cout << "Max density error: " << max_density_error.load() << std::endl;
+        logger.logNaNdV();
+
 
         if (it == MAX_STEPS){
             std::cout << "Max steps reached" << std::endl;
@@ -134,8 +127,6 @@ void Solver::ExternalForces(){
 
 void Solver::Integrate(){
     std::for_each(std::execution::par_unseq ,particles->begin(), particles->end(), [&](Point& p){
-        // p.position += p.velocity * DT;
-
         p.velocity += (p.dv_pressure + p.dv_without_pressure) * DT;
         p.position += p.velocity * DT;
         p.density = 0.0f;
@@ -146,10 +137,6 @@ void Solver::Integrate(){
 
             p.density += Solver::PARTICLE_MASS * kernel(x_ab);
         }
-
-        // if (p.density < EPS){
-        //     p.density += EPS;
-        // }
 
     });
 }

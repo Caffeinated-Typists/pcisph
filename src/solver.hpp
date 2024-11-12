@@ -12,6 +12,7 @@
 #include <memory>
 #include <point.hpp>
 #include <particles.hpp>
+#include <logger.hpp>
 
 class Solver
 {
@@ -20,6 +21,9 @@ private:
     std::vector<float> pos_last;
     std::vector<glm::vec2> boundary;    
 
+    friend class Logger;
+
+    Logger logger;
 // Solver Parameters
 private:
     const static int MIN_STEPS = 5;
@@ -31,7 +35,7 @@ private:
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float VISCOSITY_CONSTANT = 0.5f;
     constexpr static float C_S = 100.0f; // Speed of sound in liquid
-    constexpr static float REST_DENSITY = 1000.0f;
+    constexpr static float REST_DENSITY = 100.0f;
     
     float PARTICLE_MASS;
 
