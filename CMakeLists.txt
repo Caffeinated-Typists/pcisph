@@ -36,6 +36,7 @@ set_target_properties(${TARGET} PROPERTIES RUNTIME_OUTPUT_NAME "${TARGET}.out")
 target_include_directories(${TARGET} PRIVATE
 	${PROJECT_SOURCE_DIR}/src
 	${PROJECT_SOURCE_DIR}/libs/imgui
+	${PROJECT_SOURCE_DIR}/libs/glad
 	${GLFW_INCLUDE_DIRS}
 	${OPENGL_INCLUDE_DIR}
 	${GLM_INCLUDE_DIRS/../include}

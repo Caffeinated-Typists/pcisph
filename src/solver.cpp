@@ -16,10 +16,7 @@ Solver::Solver(std::shared_ptr<std::vector<Point>> _particles) : particles(_part
     for (int i = -half_range; i <= half_range; i++){
         for (int j = -half_range; j <= half_range; j++){
             auto r = glm::vec2(i * Point::radius, j * Point::radius);
-            auto dist2 = glm::dot(r, r);
-            if (dist2 < smoothing_length2 && dist2 > EPS2){
-                density_sum += kernel(r);
-            }
+            density_sum += kernel(r);
         }
     }
     
@@ -60,7 +57,7 @@ void Solver::Update(){
 
     // std::cout << "Max density error before correction loop: " << max_density_error.load() << std::endl;
 
-    while (it < MIN_STEPS || (max_density_error.load() > EPS && it < MAX_STEPS)){
+    while (it < MIN_STEPS || (max_density_error.load() > FLUCTUATION_THRESHOLD && it < MAX_STEPS)){
         PredictVelocityPosition();
         BoundaryCheckPredicted();
         updateCorrectDensityPressure();
@@ -149,6 +146,10 @@ void Solver::Integrate(){
 
             p.density += Solver::PARTICLE_MASS * kernel(x_ab);
         }
+
+        // if (p.density < EPS){
+        //     p.density += EPS;
+        // }
 
     });
 }

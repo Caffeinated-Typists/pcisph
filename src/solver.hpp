@@ -26,8 +26,8 @@ private:
     const static int MAX_STEPS = 100;
     const static int FPS = 60;
     constexpr static float BOUNDARY_THRESHOLD = 1e-3;
-    constexpr static float DT = 1.0 / (float)(FPS * 10);
-    // constexpr static float DT = 1e-3;
+    constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
+    constexpr static float DT = 1.0 / (float)(FPS * 20);
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float VISCOSITY_CONSTANT = 0.5f;
     constexpr static float C_S = 100.0f; // Speed of sound in liquid
