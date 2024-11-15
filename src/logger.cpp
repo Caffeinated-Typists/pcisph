@@ -38,7 +38,6 @@ void Logger::logPositions(){
     for (auto& p : *particles){
         ss << std::setw(8) << p.position.x << " " << std::setw(8) << p.position.y << ", ";
     }
-    ss << std::endl;
     logPrint(ss.str(), LogType::INFO);
 }
 
@@ -48,9 +47,21 @@ void Logger::logVelocities(){
     for (auto& p : *particles){
         ss << std::setw(8) << p.velocity.x << " " << std::setw(8) << p.velocity.y << ", ";
     }
-    ss << std::endl;
     logPrint(ss.str(), LogType::INFO);
 }
+
+void Logger::logFirstPosition(){
+    std::stringstream ss;
+    ss << "First Position: " << (*particles)[0].position.x << " " << (*particles)[0].position.y;
+    logPrint(ss.str(), LogType::INFO);
+}
+
+void Logger::logFirstVelocity(){
+    std::stringstream ss;
+    ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y << std::endl;
+    logPrint(ss.str(), LogType::INFO);
+}
+
 
 void Logger::logNaNParticles(){
     std::stringstream ss;

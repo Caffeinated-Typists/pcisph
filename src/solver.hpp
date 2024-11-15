@@ -16,27 +16,34 @@
 
 class Solver
 {
+// Misc
+private:
+    float VIEWPORT_WIDTH;
+    float VIEWPORT_HEIGHT;
+
 private:
     std::shared_ptr<std::vector<Point>> particles;
     std::vector<float> pos_last;
-    std::vector<glm::vec2> boundary;    
+    std::vector<glm::vec3> boundary;    
 
     friend class Logger;
 
     Logger logger;
 // Solver Parameters
 private:
-    const static int MIN_STEPS = 5;
+    const static int SOLVER_STEPS = 10;
     const static int MAX_STEPS = 100;
-    const static int FPS = 60;
+    const static int FPS = 40;
     constexpr static float BOUNDARY_THRESHOLD = 1e-3;
     constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
-    // constexpr static float DT = 1.0 / (float)(FPS * 20);
-    constexpr static float DT = 1e-3;
+    constexpr static float DT = 1.0 / (float)(FPS * SOLVER_STEPS);
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
-    constexpr static float VISCOSITY_CONSTANT = 0.5f;
-    constexpr static float C_S = 100.0f; // Speed of sound in liquid
-    constexpr static float REST_DENSITY = 1000.0f;
+    constexpr static float LINEAR_VISC = 0.5f;
+    constexpr static float QUAD_VISC = 0.25f;
+    constexpr static float SURFACE_TENSION = 1e-4;
+    constexpr static float REST_DENSITY = 45.0f;
+    constexpr static float STIFFNESS = 0.08f;
+    constexpr static float STIFF_APPROX = 0.1f;
     
     float PARTICLE_MASS;
 
@@ -44,10 +51,9 @@ private:
     constexpr static float smoothing_length2 = smoothing_length * smoothing_length;
 
     // TODO: Not sure if to use smoothing length or half of it
-    constexpr static float KERNEL_FACTOR = 10.0 / (7.0 * M_PI * smoothing_length2);
-    constexpr static float GRAD_KERNEL_FACTOR = 1.0 * KERNEL_FACTOR / smoothing_length;
+    constexpr static float KERNEL_FACTOR = 20. / (2 * M_PI * smoothing_length2);
+    constexpr static float KERNEL_NORM = 30. / (2 * M_PI * smoothing_length2);
 
-    float DELTA = ScalingFactor();
 
     std::atomic<float> max_density_error = 0.0f;
 
@@ -55,14 +61,16 @@ private:
 private:
     constexpr static float EPS = 1e-4;
     constexpr static float EPS2 = EPS * EPS;
-    constexpr static unsigned int grid_width = 2 / smoothing_length;
-    constexpr static unsigned int grid_height = 2 / smoothing_length;
-    constexpr static unsigned int grid_size = grid_width * grid_height;
+    constexpr static float grid_dx = smoothing_length;
+    size_t grid_width;
+    size_t grid_height;
+    size_t grid_size;
+    std::vector<Point*> grid;
 
 
 public:
     Solver() {}
-    Solver (std::shared_ptr<std::vector<Point>> _particles);
+    Solver (std::shared_ptr<std::vector<Point>> _particles, float viewport_width, float viewport_height);
     ~Solver();
 
     /**
@@ -103,64 +111,5 @@ public:
     /**
      * @brief Update the grid after the particles have been updated, and update the neighbourhood
      */
-    void UpdateNeighbourhood();
-
-    /**
-     * @brief Calculate the density and pressure of the particles
-     */
-    void DensityPressure();
-
-    /**
-     * @brief predict position and velocity of the particles
-     */
-    void PredictVelocityPosition();
-
-    /**
-     * @brief Predict the density of the particles, and calculate the pressure
-     */
-    void updateCorrectDensityPressure();
-
-    /**
-     * @brief Calculate the velocity change due to pressure
-     * 
-     */
-    void CalcDvPressure();
-
-    /**
-     * 
-     * @brief Kernel function for the SPH
-     * 
-     * @details This is the cubic spline kernel function whose equation is given by:
-     * 
-     * W(r, h)  = sigma * (1 - 3/2 * q^2 + 3/4 * q^3) for 0 <= q < 1
-     * 
-     *          = sigma * 1/4 * (2 - q)^3 for 1 <= q < 2
-     * 
-     *          = 0 for q >= 2
-     * 
-     * Link for better equation: https://imgur.com/a/nFJuLAp
-     * 
-     * Where q = r / h and sigma = 10 / (7 * pi * h^2) for 2D 
-     * 
-     * @param r The difference vector
-     * 
-     * @return The kernel value
-     */
-    inline float kernel(glm::vec2 r);
-
-    /**
-     * @brief Calculate the gradient of the kernel function
-     * 
-     * @param r The difference vector
-     * 
-     * @return The gradient of the kernel function
-     */
-    inline glm::vec2 grad_kernel(glm::vec2& r);
-
-
-    /**
-     * @brief Calculate value of delta as described Equation 8 of PCISPH paper
-     */
-    float ScalingFactor();
-
+    void GridInsert();
 };

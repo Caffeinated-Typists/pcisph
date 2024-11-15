@@ -49,5 +49,7 @@ public:
      */
     void logNaNParticles();
     void logNaNdV();
+    void logFirstPosition();
+    void logFirstVelocity();
 };
 
