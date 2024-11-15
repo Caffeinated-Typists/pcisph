@@ -58,78 +58,93 @@ void Logger::logFirstPosition(){
 
 void Logger::logFirstVelocity(){
     std::stringstream ss;
-    ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y << std::endl;
+    ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y;
+    logPrint(ss.str(), LogType::INFO);
+}
+
+void Logger::logFirstNumberOfNeighbours(){
+    std::stringstream ss;
+    ss << "First Number of Neighbours: " << (*particles)[0].size;
+    logPrint(ss.str(), LogType::INFO);
+}
+
+void Logger::logGridLocations(){
+    std::stringstream ss;
+    ss << "Grid Locations: " << std::endl;
+    for (auto& p : *particles){
+        ss << "(" << p.grid_x << ", " << p.grid_y << "), ";
+    }
     logPrint(ss.str(), LogType::INFO);
 }
 
 
-void Logger::logNaNParticles(){
-    std::stringstream ss;
-    ss << "NaNs: " << std::endl;
-    int count = 0;
-    for (auto& p : *particles){
-        if (std::isnan(p.velocity.x) || std::isnan(p.velocity.y) || std::isnan(p.position.x) || std::isnan(p.position.y)){
-            ss << getAllInfo(&p - &(*particles)[0]);
-            count++;
-        }
+// void Logger::logNaNParticles(){
+//     std::stringstream ss;
+//     ss << "NaNs: " << std::endl;
+//     int count = 0;
+//     for (auto& p : *particles){
+//         if (std::isnan(p.velocity.x) || std::isnan(p.velocity.y) || std::isnan(p.position.x) || std::isnan(p.position.y)){
+//             ss << getAllInfo(&p - &(*particles)[0]);
+//             count++;
+//         }
         
-    }
-    if (count > 0)
-        logPrint(ss.str(), LogType::ERROR);
-}
+//     }
+//     if (count > 0)
+//         logPrint(ss.str(), LogType::ERROR);
+// }
 
-void Logger::logNaNdV(){
-    std::stringstream ss;
-    ss << "NaNs in dV: " << std::endl;
-    int count = 0;
-    for (auto& p : *particles){
-        if (std::isnan(p.dv_pressure.x) || std::isnan(p.dv_pressure.y) || std::isnan(p.dv_without_pressure.x) || std::isnan(p.dv_without_pressure.y)){
-            ss << getDvInfo(&p - &(*particles)[0]);
-            count++;
-        }
+// void Logger::logNaNdV(){
+//     std::stringstream ss;
+//     ss << "NaNs in dV: " << std::endl;
+//     int count = 0;
+//     for (auto& p : *particles){
+//         if (std::isnan(p.dv_pressure.x) || std::isnan(p.dv_pressure.y) || std::isnan(p.dv_without_pressure.x) || std::isnan(p.dv_without_pressure.y)){
+//             ss << getDvInfo(&p - &(*particles)[0]);
+//             count++;
+//         }
         
-    }
-    if (count > 0)
-        logPrint(ss.str(), LogType::ERROR);
-}
+//     }
+//     if (count > 0)
+//         logPrint(ss.str(), LogType::ERROR);
+// }
 
 
-std::string Logger::getAllInfo(int idx){
-    std::stringstream ss;
-    Point p = (*particles)[idx];
-    ss << "Particle " << idx << ":\n";
-    ss << "Position: " << p.position.x << " " << p.position.y << "\n";
-    ss << "Velocity: " << p.velocity.x << " " << p.velocity.y << "\n";
-    ss << "Density: " << p.density << "\n";
-    ss << "Pressure: " << p.corrected_pressure << "\n";
-    ss << "DV Pressure: " << p.dv_pressure.x << " " << p.dv_pressure.y << "\n";
-    ss << "DV without Pressure: " << p.dv_without_pressure.x << " " << p.dv_without_pressure.y << "\n";
-    ss << "Number of neighbours: " << p.size << "\n";
-    ss << "\n";
-    return ss.str();
-}
+// std::string Logger::getAllInfo(int idx){
+//     std::stringstream ss;
+//     Point p = (*particles)[idx];
+//     ss << "Particle " << idx << ":\n";
+//     ss << "Position: " << p.position.x << " " << p.position.y << "\n";
+//     ss << "Velocity: " << p.velocity.x << " " << p.velocity.y << "\n";
+//     ss << "Density: " << p.density << "\n";
+//     ss << "Pressure: " << p.corrected_pressure << "\n";
+//     ss << "DV Pressure: " << p.dv_pressure.x << " " << p.dv_pressure.y << "\n";
+//     ss << "DV without Pressure: " << p.dv_without_pressure.x << " " << p.dv_without_pressure.y << "\n";
+//     ss << "Number of neighbours: " << p.size << "\n";
+//     ss << "\n";
+//     return ss.str();
+// }
 
-std::string Logger::getDvInfo(int idx){
-    std::stringstream ss;
-    Point p = (*particles)[idx];
-    ss << "Particle " << idx << ":\n";
-    ss << "DV Pressure: " << p.dv_pressure.x << " " << p.dv_pressure.y << "\n";
-    ss << "Corrected Pressure: " << p.corrected_pressure << "\n";
-    ss << "Density: " << p.density << "\n";
-    ss << "Number of neighbours: " << p.size << "\n";
-    ss << "Neighbours: \n";
+// std::string Logger::getDvInfo(int idx){
+//     std::stringstream ss;
+//     Point p = (*particles)[idx];
+//     ss << "Particle " << idx << ":\n";
+//     ss << "DV Pressure: " << p.dv_pressure.x << " " << p.dv_pressure.y << "\n";
+//     ss << "Corrected Pressure: " << p.corrected_pressure << "\n";
+//     ss << "Density: " << p.density << "\n";
+//     ss << "Number of neighbours: " << p.size << "\n";
+//     ss << "Neighbours: \n";
 
-    // get density and corrected pressure of neighbours
-    for (size_t i = 0; i < p.size; i++){
-        auto& neighbour = (*particles)[p.neighbours[i]];
-        ss << "Neighbour " << p.neighbours[i] << ", ";
-        ss << "Density: " << neighbour.density << ", ";
-        ss << "Corrected Pressure: " << neighbour.corrected_pressure << ", ";
-        ss << "Distance: " << glm::length(p.position - neighbour.position) << ", ";
-        ss << "\n";
-    }
+//     // get density and corrected pressure of neighbours
+//     for (size_t i = 0; i < p.size; i++){
+//         auto& neighbour = (*particles)[p.neighbours[i]];
+//         ss << "Neighbour " << p.neighbours[i] << ", ";
+//         ss << "Density: " << neighbour.density << ", ";
+//         ss << "Corrected Pressure: " << neighbour.corrected_pressure << ", ";
+//         ss << "Distance: " << glm::length(p.position - neighbour.position) << ", ";
+//         ss << "\n";
+//     }
     
 
-    ss << "\n";
-    return ss.str();
-}
+//     ss << "\n";
+//     return ss.str();
+// }

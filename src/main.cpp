@@ -82,7 +82,7 @@ int main(){
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
-        // glfwSwapInterval(0);
+        glfwSwapInterval(0);
 
     }
 

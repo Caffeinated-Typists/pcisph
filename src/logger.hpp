@@ -30,8 +30,8 @@ private:
 
 private:
     std::string enumToString(LogType type);
-    std::string getAllInfo(int idx);
-    std::string getDvInfo(int idx);
+    // std::string getAllInfo(int idx);
+    // std::string getDvInfo(int idx);
 
 public:
     Logger() {};
@@ -47,9 +47,11 @@ public:
     /**
      * @brief Print information about the particles whose velocity or position is NaN
      */
-    void logNaNParticles();
-    void logNaNdV();
+    // void logNaNParticles();
+    // void logNaNdV();
     void logFirstPosition();
     void logFirstVelocity();
+    void logFirstNumberOfNeighbours();
+    void logGridLocations();
 };
 

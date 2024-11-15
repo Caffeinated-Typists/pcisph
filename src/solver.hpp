@@ -33,10 +33,11 @@ private:
 private:
     const static int SOLVER_STEPS = 10;
     const static int MAX_STEPS = 100;
-    const static int FPS = 40;
+    const static int FPS = 60;
     constexpr static float BOUNDARY_THRESHOLD = 1e-3;
     constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
     constexpr static float DT = 1.0 / (float)(FPS * SOLVER_STEPS);
+    constexpr static float DT2 = DT * DT;
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float LINEAR_VISC = 0.5f;
     constexpr static float QUAD_VISC = 0.25f;
@@ -59,7 +60,7 @@ private:
 
 // Grid Parameters
 private:
-    constexpr static float EPS = 1e-4;
+    constexpr static float EPS = 1e-7;
     constexpr static float EPS2 = EPS * EPS;
     constexpr static float grid_dx = smoothing_length;
     size_t grid_width;
@@ -84,11 +85,6 @@ public:
     void BoundaryCheck(); 
 
     /**
-     * @brief ensure that predicted positions are within the boundaries
-     */
-    void BoundaryCheckPredicted();
-
-    /**
      * @brief Apply external forces to the particles, mainly gravity here
      */
     void ExternalForces();
@@ -99,17 +95,22 @@ public:
     void Integrate();
 
     /**
-     * @brief Print the positions of the particles
-     */
-    void printPositions();
-
-    /**
-     * @brief print the velocities of the particles
-     */
-    void printVelocities();
-
-    /**
      * @brief Update the grid after the particles have been updated, and update the neighbourhood
      */
     void GridInsert();
+
+    /**
+     * @brief Pressure solver
+     */
+    void PressureSolve();
+
+    /**
+     * @brief Projection Step
+     */
+    void ProjectionStep();
+
+    /**
+     * @brief Correction Step
+     */
+    void CorrectionStep();
 };
