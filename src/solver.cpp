@@ -39,6 +39,7 @@ Solver::~Solver(){
 
 
 void Solver::Update(){
+    logger.logNumNaNPositions();
     UpdateNeighbourhood();
     ExternalForces();
 
@@ -60,7 +61,7 @@ void Solver::Update(){
         CalcDvPressure();
         it++;
 
-        logger.logNaNdV();
+        // logger.logNaNdV();
 
 
         if (it == MAX_STEPS){
