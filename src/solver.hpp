@@ -17,9 +17,13 @@
 class Solver
 {
 private:
+    float VIEW_WIDTH;
+    float VIEW_HEIGHT;
+
+private:
     std::shared_ptr<std::vector<Point>> particles;
     std::vector<float> pos_last;
-    std::vector<glm::vec2> boundary;    
+    std::vector<glm::vec3> boundary;    
 
     friend class Logger;
 
@@ -53,16 +57,18 @@ private:
 
 // Grid Parameters
 private:
-    constexpr static float EPS = 1e-4;
+    constexpr static float EPS = 1e-7;
     constexpr static float EPS2 = EPS * EPS;
-    constexpr static unsigned int grid_width = 2 / smoothing_length;
-    constexpr static unsigned int grid_height = 2 / smoothing_length;
-    constexpr static unsigned int grid_size = grid_width * grid_height;
+    size_t grid_width;
+    size_t grid_height;
+    size_t grid_size;
+    std::vector<Point*> grid;
+
 
 
 public:
     Solver() {}
-    Solver (std::shared_ptr<std::vector<Point>> _particles);
+    Solver (std::shared_ptr<std::vector<Point>> _particles, float _view_width, float _view_height);
     ~Solver();
 
     /**

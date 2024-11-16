@@ -31,10 +31,12 @@ public:
 
     // static float mass;
 
+    Point* next;
+
     glm::vec2 dv_without_pressure;
     glm::vec2 dv_pressure;
 
-    constexpr static float radius = 0.01f;
+    constexpr static float radius = 0.03f;
     int grid_x;
     int grid_y;
     

@@ -1,12 +1,12 @@
 #include <solver.hpp>
 
-Solver::Solver(std::shared_ptr<std::vector<Point>> _particles) 
-    : particles(_particles), logger("log.txt", this) {
+Solver::Solver(std::shared_ptr<std::vector<Point>> _particles, float _view_width, float _view_height)
+    : particles(_particles), logger("log.txt", this), VIEW_WIDTH(_view_width), VIEW_HEIGHT(_view_height){
     boundary = {
-        glm::vec2(-1.0, 0.0),
-        glm::vec2(0.0, -1.0),
-        glm::vec2(1.0, 0.0),
-        glm::vec2(0.0, 1.0)
+        glm::vec3(-1.0, 0.0, -VIEW_WIDTH),
+        glm::vec3(0.0, -1.0, -VIEW_HEIGHT),
+        glm::vec3(1.0, 0.0, 0.0),
+        glm::vec3(0.0, 1.0, 0.0)
     };
 
     // calculate mass based on rest density
@@ -32,6 +32,16 @@ Solver::Solver(std::shared_ptr<std::vector<Point>> _particles)
 
     std::cout << "Particle mass: " << Solver::PARTICLE_MASS << std::endl;
     std::cout << "Delta: " << DELTA << std::endl;
+
+    grid_width = (size_t)std::ceil(VIEW_WIDTH / smoothing_length);
+    grid_height = (size_t)std::ceil(VIEW_HEIGHT / smoothing_length);
+    grid_size = grid_width * grid_height;
+
+    grid.resize(grid_size);
+
+    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+        p.neighbours.resize(Point::MAX_NEIGHBOURS);
+    });
 }
 
 Solver::~Solver(){
@@ -39,6 +49,7 @@ Solver::~Solver(){
 
 
 void Solver::Update(){
+    logger.logNumNaNPositions();
     UpdateNeighbourhood();
     ExternalForces();
 
@@ -60,8 +71,6 @@ void Solver::Update(){
         CalcDvPressure();
         it++;
 
-        logger.logNaNdV();
-
 
         if (it == MAX_STEPS){
             std::cout << "Max steps reached" << std::endl;
@@ -75,30 +84,27 @@ void Solver::Update(){
 
 void Solver::BoundaryCheck(){
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-        if (p.position.x < -1.0 + BOUNDARY_THRESHOLD || p.position.x > 1.0 - BOUNDARY_THRESHOLD) {
-            p.position.x = glm::clamp(p.position.x, -1.0f + BOUNDARY_THRESHOLD, 1.0f - BOUNDARY_THRESHOLD);
-            p.velocity.x = -p.velocity.x;
+        for (auto& b : boundary){
+            glm::vec2 n = glm::vec2(b.x, b.y);
+            float d = glm::dot(p.position, n) - b.z;
+            if ((d = std::max(0.0f, d)) < Point::radius){
+                p.velocity += (Point::radius - d) * n / DT;
+            }
         }
-        if (p.position.y < -1.0 + BOUNDARY_THRESHOLD || p.position.y > 1.0 - BOUNDARY_THRESHOLD) {
-            p.position.y = glm::clamp(p.position.y, -1.0f + BOUNDARY_THRESHOLD, 1.0f - BOUNDARY_THRESHOLD);
-            p.velocity.y = -p.velocity.y;
-        }
-        
+
     });
 }
 
 
 void Solver::BoundaryCheckPredicted(){
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-        if (p.predicted_position.x < -1.0 + BOUNDARY_THRESHOLD || p.predicted_position.x > 1.0 - BOUNDARY_THRESHOLD) {
-            p.predicted_position.x = glm::clamp(p.predicted_position.x, -1.0f + BOUNDARY_THRESHOLD, 1.0f - BOUNDARY_THRESHOLD);
-            p.predicted_velocity.x = -p.predicted_velocity.x;
+        for (auto& b : boundary){
+            glm::vec2 n = glm::vec2(b.x, b.y);
+            float d = glm::dot(p.predicted_position, n) - b.z;
+            if ((d = std::max(0.0f, d)) < Point::radius){
+                p.predicted_velocity += (Point::radius - d) * n / DT;
+            }
         }
-        if (p.predicted_position.y < -1.0 + BOUNDARY_THRESHOLD || p.predicted_position.y > 1.0 - BOUNDARY_THRESHOLD) {
-            p.predicted_position.y = glm::clamp(p.predicted_position.y, -1.0f + BOUNDARY_THRESHOLD, 1.0f - BOUNDARY_THRESHOLD);
-            p.predicted_velocity.y = -p.predicted_velocity.y;
-        }
-
     });
 }
 
@@ -151,51 +157,36 @@ void Solver::printVelocities(){
 }
 
 void Solver::UpdateNeighbourhood(){
-
-    std::vector<std::vector<unsigned short>> grid(grid_size);
-
-    for (auto& elem : grid){
-        elem.reserve(100);
-    }
+    std::for_each(std::execution::par_unseq, grid.begin(), grid.end(), [](Point*& p){
+        p = nullptr;
+    });
 
     std::for_each(std::execution::seq, particles->begin(), particles->end(), [&](Point& p){
-        unsigned int x = (p.position.x + 1) / smoothing_length;
-        unsigned int y = (p.position.y + 1) / smoothing_length;
-        x = std::max((unsigned int)0, std::min(grid_width - 1, x));
-        y = std::max((unsigned int)0, std::min(grid_height - 1, y));
-
-        p.grid_x = x;
-        p.grid_y = y;
-
-        grid[x + y * grid_width].push_back(&p - &(*particles)[0]);
+        p.grid_x = std::clamp((int)(p.position.x / smoothing_length), 1, (int)grid_width - 2);
+        p.grid_y = std::clamp((int)(p.position.y / smoothing_length), 1, (int)grid_height - 2);
+        p.next = grid[p.grid_x + grid_width * p.grid_y];
+        grid[p.grid_x + grid_width * p.grid_y] = &p;
     });
 
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-        p.neighbours.clear();
         p.size = 0;
 
-        for (int i = -1; i <= 1; i++){
-            for (int j = -1; j <= 1; j++){
-                if (p.grid_x + i < 0 || p.grid_x + i >= grid_width || p.grid_y + j < 0 || p.grid_y + j >= grid_height){
-                    continue;
-                }
-                for (auto& idx : grid[p.grid_x + i + (p.grid_y + j) * grid_width]){
-                    if (p.size >= Point::MAX_NEIGHBOURS){
-                        break;
-                    }
 
-                    auto& neighbour = (*particles)[idx];
-                    float dist = glm::dot(neighbour.position - p.position, neighbour.position - p.position);
-                    if (dist > EPS2 && dist < smoothing_length2){
-                        p.neighbours.push_back(idx);
-                        p.size++;
+        for (int i = p.grid_x - 1; i <= p.grid_x + 1; i++){
+            for (int j = p.grid_y - 1; j <= p.grid_y + 1; j++){
+                int grid_idx = i + grid_width * j;
+                for (auto q = grid[grid_idx]; q != nullptr; q = q->next){
+                    if (p.size > Point::MAX_NEIGHBOURS)
+                        break;
+                    
+                    float dist2 = glm::dot(p.position - q->position, p.position - q->position);
+                    if (dist2 < smoothing_length2 && dist2 > EPS2){
+                        p.neighbours[p.size++] = q - &(*particles)[0];
                     }
                 }
             }
         }
-
     });
-
 }
 
 void Solver::PredictVelocityPosition(){

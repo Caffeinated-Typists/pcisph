@@ -7,6 +7,8 @@
 Shader* shader;
 int screenWidth = 1280;
 int screenHeight = 720;
+float view_width = 12.5f;
+float view_height = screenHeight * view_width/ screenWidth;
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height){
     glViewport(0, 0, width, height);
@@ -25,31 +27,29 @@ int main(){
     points.reserve(30000);
 
 
-    // keep all coordinates in the range [-1, 1]
-    int particles_per_row = 50 + 1;
-    int particles_per_col = 50 + 1;
+    int particles_per_row = 50;
+    int particles_per_col = 50;
 
-    float dx = 1.0 / particles_per_row;
-    float dy = -1.0 / particles_per_col;
-
-    float x = -0.5 + dx;
-    float y = 0.1 - dy;
-
-    for (int i = 0; i < particles_per_col - 1; i++){
-        for (int j = 0; j < particles_per_row - 1; j++){
-            points.emplace_back(glm::vec2(x, y));
-            x += dx;
+    glm::vec2 start(0.25 * view_width, 0.95 * view_height);
+    float x0 = start.x;
+    float spacing = Point::radius;
+    for (int i = 0; i < particles_per_row; i++){
+        for (int j = 0; j < particles_per_col; j++){
+            points.emplace_back(start);
+            start.x += 2.0f * Point::radius + spacing;
         }
-        x = -0.5 + dx;
-        y += dy;
+        start.x = x0;
+        start.y -= 2.0f * Point::radius + spacing;
     }
-
 
     auto ptr = std::make_shared<std::vector<Point>>(points);
     Particles particles(ptr);
-    Solver solver(ptr);
+    Solver solver(ptr, view_width, view_height);
+
+    glm::mat4 projection = glm::ortho(0.0f, view_width, 0.0f, view_height, 0.0f, 1.0f);
 
     shader->use();
+    shader->setMat4("projection", projection);
 
     while (!glfwWindowShouldClose(window)){
         glfwPollEvents();
@@ -74,6 +74,7 @@ int main(){
         
         glDisable(GL_POINT_SMOOTH);
         shader->use();
+        shader->setMat4("projection", projection);
         particles.draw(VAO, *shader);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
