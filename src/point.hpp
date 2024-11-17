@@ -22,24 +22,26 @@ public:
     glm::vec2 position;
     glm::vec2 velocity;
 
+    glm::vec2 previous_position;
     glm::vec2 predicted_position;
     glm::vec2 predicted_velocity;
 
     float density;
-    float predicted_density;
-    float corrected_pressure;
+    float dv;
+    float pressure;
+    float pv;
 
     // static float mass;
+    Point* next;
 
-    glm::vec2 dv_without_pressure;
-    glm::vec2 dv_pressure;
 
-    constexpr static float radius = 0.01f;
+    constexpr static float radius = 0.03f;
     int grid_x;
     int grid_y;
     
     const static unsigned int MAX_NEIGHBOURS = 64;
     std::vector<unsigned short> neighbours; // neighbour indices
+    std::vector<float> distances; // distances to neighbours
     size_t size; // current size of the neighbourhood
 
 public:
