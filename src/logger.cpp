@@ -108,6 +108,21 @@ void Logger::logGridLocations(){
 //         logPrint(ss.str(), LogType::ERROR);
 // }
 
+void Logger::logNumNaNPositions(){
+    std::stringstream ss;
+    std::atomic<int> count = 0;
+    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+        if (std::isnan(p.velocity.x) || std::isnan(p.velocity.y) || std::isnan(p.position.x) || std::isnan(p.position.y)){
+            count++;
+        }
+    });
+    if (count > 0){
+        ss << "Number of particles with NaN positions: " << count;
+        logPrint(ss.str(), LogType::ERROR);
+    }
+}
+
+
 
 // std::string Logger::getAllInfo(int idx){
 //     std::stringstream ss;

@@ -5,6 +5,8 @@
 #include <fstream>
 #include <chrono>
 #include <memory>
+#include <execution>
+#include <algorithm>
 #include <iomanip>
 #include <point.hpp>
 
@@ -47,11 +49,16 @@ public:
     /**
      * @brief Print information about the particles whose velocity or position is NaN
      */
-    // void logNaNParticles();
-    // void logNaNdV();
-    void logFirstPosition();
-    void logFirstVelocity();
-    void logFirstNumberOfNeighbours();
-    void logGridLocations();
+    void logNaNParticles();
+    void logNaNdV();
+
+    /**
+     * @brief Log the number of particles who have either NaN velocity or position
+     */
+    void logNumNaNPositions();
+    /**
+     * @brief Log average number of neighbours of all particles
+     */
+    void logNumOfNeighbours();
 };
 
