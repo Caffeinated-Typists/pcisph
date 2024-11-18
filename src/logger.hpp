@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <point.hpp>
+#include <particles.hpp>
 
 class Solver;
 
@@ -27,8 +28,7 @@ private:
     // time of creation of object
     std::chrono::time_point<std::chrono::system_clock> start_time;
 
-    Solver* solver;
-    std::shared_ptr<std::vector<Point>> particles;
+    Particles* particles;
 
 private:
     std::string enumToString(LogType type);
@@ -37,28 +37,39 @@ private:
 
 public:
     Logger() {};
-    Logger(const std::string& filename, Solver* _solver);
+    Logger(const std::string& filename, Particles *_particles);
     ~Logger();
 
     // formatted logger
     void logPrint(const std::string& message, LogType type);
 
     void logPositions();
-    void logVelocities();
+    // void logVelocities();
+    
+    /**
+     * @brief Output the positions of particles whose either component is negative
+     */
+    void checkNegativePositions();
+    
 
-    /**
-     * @brief Print information about the particles whose velocity or position is NaN
-     */
-    void logNaNParticles();
-    void logNaNdV();
+    // void logFirstPosition();
+    // void logFirstVelocity();
+    // void logGridLocations();
+    // void logFirstNumberOfNeighbours();
 
-    /**
-     * @brief Log the number of particles who have either NaN velocity or position
-     */
-    void logNumNaNPositions();
-    /**
-     * @brief Log average number of neighbours of all particles
-     */
-    void logNumOfNeighbours();
+    // /**
+    //  * @brief Print information about the particles whose velocity or position is NaN
+    //  */
+    // void logNaNParticles();
+    // void logNaNdV();
+
+    // /**
+    //  * @brief Log the number of particles who have either NaN velocity or position
+    //  */
+    // void logNumNaNPositions();
+    // /**
+    //  * @brief Log average number of neighbours of all particles
+    //  */
+    // void logNumOfNeighbours();
 };
 

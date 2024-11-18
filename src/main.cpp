@@ -23,30 +23,33 @@ int main(){
     unsigned int VAO;
     shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
 
-    std::vector<Point> points;
-    points.reserve(30000);
-
+    std::vector<float> positions;
 
     // keep all coordinates in the range [-1, 1]
     int particles_per_row = 50;
     int particles_per_col = 50;
+    positions.reserve(2 * particles_per_row * particles_per_col);
 
-    glm::vec2 start(0.25 * viewport_width, 0.95 * viewport_height);
-    float x0 = start.x;
-    float spacing = Point::radius;
+
+    float start_x = 0.25  * viewport_width;
+    float start_y = 0.95 * viewport_height;
+
+    float x0 = start_x;
+
+    float spacing = Particles::radius;
     for (int i = 0; i < particles_per_row; i++){
         for (int j = 0; j < particles_per_col; j++){
-            points.emplace_back(start);
-            start.x += 2.0f * Point::radius + spacing;
+            positions.push_back(start_x);
+            positions.push_back(start_y);
+            start_x += 2.0f * Particles::radius + spacing;
         }
-        start.x = x0;
-        start.y -= 2.0f * Point::radius + spacing;
+        start_x = x0;
+        start_y -= 2.0f * Particles::radius + spacing;
     }
 
 
-    auto ptr = std::make_shared<std::vector<Point>>(points);
-    Particles particles(ptr);
-    Solver solver(ptr, viewport_width, viewport_height);
+    Particles particles(positions);
+    Solver solver(&particles, viewport_width, viewport_height);
 
     glm::mat4 projection = glm::ortho(0.0f, viewport_width, 0.0f, viewport_height, 0.0f, 1.0f);
 
@@ -82,7 +85,7 @@ int main(){
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
-        glfwSwapInterval(0);
+        // glfwSwapInterval(0);
 
     }
 

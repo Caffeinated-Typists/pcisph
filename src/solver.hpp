@@ -22,8 +22,8 @@ private:
     float VIEWPORT_HEIGHT;
 
 private:
-    std::shared_ptr<std::vector<Point>> particles;
-    std::vector<float> pos_last;
+    Particles* particles;
+     std::vector<float> pos_last;
     std::vector<glm::vec3> boundary;    
 
     friend class Logger;
@@ -71,7 +71,7 @@ private:
 
 public:
     Solver() {}
-    Solver (std::shared_ptr<std::vector<Point>> _particles, float viewport_width, float viewport_height);
+    Solver (Particles *particles, float viewport_width, float viewport_height);
     ~Solver();
 
     /**
@@ -94,23 +94,23 @@ public:
      */
     void Integrate();
 
-    /**
-     * @brief Update the grid after the particles have been updated, and update the neighbourhood
-     */
-    void GridInsert();
+    // /**
+    //  * @brief Update the grid after the particles have been updated, and update the neighbourhood
+    //  */
+    // void GridInsert();
 
-    /**
-     * @brief Pressure solver
-     */
-    void PressureSolve();
+    // /**
+    //  * @brief Pressure solver
+    //  */
+    // void PressureSolve();
 
-    /**
-     * @brief Projection Step
-     */
-    void ProjectionStep();
+    // /**
+    //  * @brief Projection Step
+    //  */
+    // void ProjectionStep();
 
-    /**
-     * @brief Correction Step
-     */
-    void CorrectionStep();
+    // /**
+    //  * @brief Correction Step
+    //  */
+    // void CorrectionStep();
 };

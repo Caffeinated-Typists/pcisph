@@ -1,7 +1,7 @@
 #include <logger.hpp>
 #include <solver.hpp>
 
-Logger::Logger(const std::string& filename, Solver* _solver) :  solver(_solver), particles(_solver->particles) {
+Logger::Logger(const std::string& filename, Particles* _particles) :  particles(_particles){
     // create file if it does not exist
     log_file.open(filename, std::ios::out | std::ios::trunc);
 
@@ -34,48 +34,68 @@ void Logger::logPrint(const std::string& message, LogType type){
 
 void Logger::logPositions(){
     std::stringstream ss;
+
+    auto& positions = particles->positions;
+
     ss << "Positions: ";
-    for (auto& p : *particles){
-        ss << std::setw(8) << p.position.x << " " << std::setw(8) << p.position.y << ", ";
+    for (int i = 0; i < positions.size(); i += 2){
+        ss << std::setw(8) << positions[i] << " " << std::setw(8) << positions[i + 1] << ", ";
     }
     logPrint(ss.str(), LogType::INFO);
 }
 
-void Logger::logVelocities(){
+// void Logger::logVelocities(){
+//     std::stringstream ss;
+//     ss << "Velocities: " << std::endl;
+//     for (auto& p : *particles){
+//         ss << std::setw(8) << p.velocity.x << " " << std::setw(8) << p.velocity.y << ", ";
+//     }
+//     logPrint(ss.str(), LogType::INFO);
+// }
+
+
+void Logger::checkNegativePositions(){
     std::stringstream ss;
-    ss << "Velocities: " << std::endl;
-    for (auto& p : *particles){
-        ss << std::setw(8) << p.velocity.x << " " << std::setw(8) << p.velocity.y << ", ";
+    auto& positions = particles->positions;
+
+    int count = 0;
+    for (auto& i : particles->indices){
+        if (positions[i * 2] < 0 || positions[i * 2 + 1] < 0){
+            ss << "Particle " << i << " has negative position: " << positions[i * 2] << " " << positions[i * 2 + 1] << std::endl;
+            count++;
+        }
     }
-    logPrint(ss.str(), LogType::INFO);
+    if (count > 0)
+        logPrint(ss.str(), LogType::ERROR);
+
 }
 
-void Logger::logFirstPosition(){
-    std::stringstream ss;
-    ss << "First Position: " << (*particles)[0].position.x << " " << (*particles)[0].position.y;
-    logPrint(ss.str(), LogType::INFO);
-}
+// void Logger::logFirstPosition(){
+//     std::stringstream ss;
+//     ss << "First Position: " << (*particles)[0].position.x << " " << (*particles)[0].position.y;
+//     logPrint(ss.str(), LogType::INFO);
+// }
 
-void Logger::logFirstVelocity(){
-    std::stringstream ss;
-    ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y;
-    logPrint(ss.str(), LogType::INFO);
-}
+// void Logger::logFirstVelocity(){
+//     std::stringstream ss;
+//     ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y;
+//     logPrint(ss.str(), LogType::INFO);
+// }
 
-void Logger::logFirstNumberOfNeighbours(){
-    std::stringstream ss;
-    ss << "First Number of Neighbours: " << (*particles)[0].size;
-    logPrint(ss.str(), LogType::INFO);
-}
+// void Logger::logFirstNumberOfNeighbours(){
+//     std::stringstream ss;
+//     ss << "First Number of Neighbours: " << (*particles)[0].size;
+//     logPrint(ss.str(), LogType::INFO);
+// }
 
-void Logger::logGridLocations(){
-    std::stringstream ss;
-    ss << "Grid Locations: " << std::endl;
-    for (auto& p : *particles){
-        ss << "(" << p.grid_x << ", " << p.grid_y << "), ";
-    }
-    logPrint(ss.str(), LogType::INFO);
-}
+// void Logger::logGridLocations(){
+//     std::stringstream ss;
+//     ss << "Grid Locations: " << std::endl;
+//     for (auto& p : *particles){
+//         ss << "(" << p.grid_x << ", " << p.grid_y << "), ";
+//     }
+//     logPrint(ss.str(), LogType::INFO);
+// }
 
 
 // void Logger::logNaNParticles(){
@@ -108,19 +128,19 @@ void Logger::logGridLocations(){
 //         logPrint(ss.str(), LogType::ERROR);
 // }
 
-void Logger::logNumNaNPositions(){
-    std::stringstream ss;
-    std::atomic<int> count = 0;
-    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-        if (std::isnan(p.velocity.x) || std::isnan(p.velocity.y) || std::isnan(p.position.x) || std::isnan(p.position.y)){
-            count++;
-        }
-    });
-    if (count > 0){
-        ss << "Number of particles with NaN positions: " << count;
-        logPrint(ss.str(), LogType::ERROR);
-    }
-}
+// void Logger::logNumNaNPositions(){
+//     std::stringstream ss;
+//     std::atomic<int> count = 0;
+//     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+//         if (std::isnan(p.velocity.x) || std::isnan(p.velocity.y) || std::isnan(p.position.x) || std::isnan(p.position.y)){
+//             count++;
+//         }
+//     });
+//     if (count > 0){
+//         ss << "Number of particles with NaN positions: " << count;
+//         logPrint(ss.str(), LogType::ERROR);
+//     }
+// }
 
 
 
