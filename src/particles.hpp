@@ -31,9 +31,8 @@ private:
     std::vector<float> pressures;
     std::vector<float> pvs;
 
-    // grid indices
-    std::vector<size_t> grid_xs;
-    std::vector<size_t> grid_ys;
+    // vec2 grid position
+    std::vector<size_t> grid_pos;
 
     // neighbour information
     std::vector<std::vector<unsigned short>> neighbours;
@@ -55,6 +54,16 @@ private:
     friend class Solver;
     friend class Logger;
 
+private:
+    unsigned int positionSSBO;
+    unsigned int velocitySSBO;
+    unsigned int VAO;
+
+    /**
+     * @brief Create the SSBO for the particles
+     */
+    void setupSSBO();
+
 public:
     constexpr static float radius = 0.03f;
 
@@ -67,7 +76,7 @@ public:
      * 
      * Add particles to a VAO and perform a draw call
      */
-    void draw(unsigned int& VAO, Shader& shader);
+    void draw(Shader& shader);
 
     /**
      * @brief reserve space for the particles
