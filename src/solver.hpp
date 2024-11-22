@@ -13,6 +13,7 @@
 #include <point.hpp>
 #include <particles.hpp>
 #include <logger.hpp>
+#include <shader.hpp>
 
 class Solver
 {
@@ -68,6 +69,10 @@ private:
     size_t grid_size;
     std::vector<Point*> grid;
 
+private:
+    Shader* externForceAndIntegrateShader;
+    Shader* boundaryCheckShader;
+
 
 public:
     Solver() {}
@@ -87,12 +92,8 @@ public:
     /**
      * @brief Apply external forces to the particles, mainly gravity here
      */
-    void ExternalForces();
+    void ExForcesIntegrate();
 
-    /**
-     * @brief Update the position of the particles using the velocity
-     */
-    void Integrate();
 
     // /**
     //  * @brief Update the grid after the particles have been updated, and update the neighbourhood

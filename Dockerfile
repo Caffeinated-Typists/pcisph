@@ -23,6 +23,9 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
+# Remove old build directory
+RUN rm -rf build
+
 # Build project
 RUN mkdir -p build && \
     cd build && \

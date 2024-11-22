@@ -1,0 +1,41 @@
+#version 460 core
+
+layout(local_size_x = 256) in;
+
+layout (std430, binding = 0) buffer Pos {
+    vec2 pos[];
+};
+
+layout (std430, binding = 1) buffer Vel {
+    vec2 vel[];
+};
+
+layout (std430, binding = 2) buffer PrevPos {
+    vec2 prevPos[];
+};
+
+layout (std430, binding = 3) buffer PredictedPos {
+    vec2 predictedPos[];
+};
+
+layout (std430, binding = 4) buffer PredictedVel {
+    vec2 predictedVel[];
+};
+
+layout (std430, binding = 5) buffer Density {
+    float density[];
+};
+
+layout (std430, binding = 6) buffer Dvs{
+    vec2 dvs[];
+};
+
+layout (std430, binding = 7) buffer Pressure {
+    float pressure[];
+};
+
+layout (std430, binding = 8) buffer Pvs {
+    vec2 pvs[];
+};
+
+uniform float dt;

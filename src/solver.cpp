@@ -21,6 +21,8 @@ Solver::Solver(Particles *_particles, float viewport_width, float viewport_heigh
     grid.resize(grid_size);
 
     // GridInsert();
+    externForceAndIntegrateShader = new Shader("./shaders/solver/exforce_integrate.comp");
+    boundaryCheckShader = new Shader("./shaders/solver/boundary_check.comp");
 }
 
 Solver::~Solver(){
@@ -31,63 +33,47 @@ void Solver::Update(){
     // logger.logGridLocations();
     // logger.logFirstNumberOfNeighbours();
     // logger.logPositions();
-    logger.checkNegativePositions();
+    // logger.checkNegativePositions();
+    // for (int i = 0; i < SOLVER_STEPS; i++){
+    //     ExternalForces();
+    //     Integrate();
+    //     // GridInsert();
+    //     // PressureSolve();
+    //     // ProjectionStep();
+    //     // CorrectionStep();
+    //     BoundaryCheck();
+    // }
+
     for (int i = 0; i < SOLVER_STEPS; i++){
-        ExternalForces();
-        Integrate();
-        // GridInsert();
-        // PressureSolve();
-        // ProjectionStep();
-        // CorrectionStep();
+        ExForcesIntegrate();
         BoundaryCheck();
     }
+
 }
 
 void Solver::BoundaryCheck(){
-    auto& positions = particles->positions;
-    auto& velocities = particles->velocities;
-    
-    std::for_each(std::execution::par_unseq, particles->indices.begin(), particles->indices.end(), [&](size_t idx){
-        for (auto& b : boundary){
-            float d = positions[idx * 2] * b.x + positions[idx * 2 + 1] * b.y - b.z;
-            if ((d = std::max(0.0f, d)) < Particles::radius){
-                velocities[idx * 2] += (Particles::radius - d) * b.x / DT;
-                velocities[idx * 2 + 1] += (Particles::radius - d) * b.y / DT;
-            }
-        }
-    });
+    boundaryCheckShader->use();
+    boundaryCheckShader->setFloat("dt", DT);
+    boundaryCheckShader->setFloat("viewWidth", VIEWPORT_WIDTH);
+    boundaryCheckShader->setFloat("radius", Particles::radius);
+
+    glDispatchCompute(particles->num_particles / 256 + 1, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 }
 
 
 
-void Solver::ExternalForces(){
-    auto& velocities = particles->velocities;
-    auto& indices = particles->indices;
+void Solver::ExForcesIntegrate(){
+    externForceAndIntegrateShader->use();
 
-    std::for_each(std::execution::par_unseq, indices.begin(), indices.end(), [&](size_t idx){
-        velocities[idx * 2 + 1] += GRAVITY.y * DT;
-    });
+    externForceAndIntegrateShader->setFloat("dt", DT);
 
-}
-
-void Solver::Integrate(){
-    // get reference to the positions
-    auto& positions = particles->positions;
-    auto& previous_positions = particles->previous_positions;
-    auto& velocities = particles->velocities;
-    auto& indices = particles->indices;
-
-    std::for_each(std::execution::par_unseq, indices.begin(), indices.end(), [&](size_t idx){
-        // store the previous position
-        previous_positions[idx * 2] = positions[idx * 2];
-        previous_positions[idx * 2 + 1] = positions[idx * 2 + 1];
-        
-        positions[idx * 2] += DT * velocities[idx * 2];
-        positions[idx * 2 + 1] +=  DT * velocities[idx * 2 + 1];
-    });
+    glDispatchCompute(particles->num_particles / 256 + 1, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 }
+
 
 
 // void Solver::GridInsert(){

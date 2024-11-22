@@ -15,20 +15,6 @@ Particles::Particles(std::vector<float> _positions) : positions(_positions){
     pressures.resize(num_particles);
     pvs.resize(num_particles);
 
-    grid_pos.resize(num_particles * 2);
-
-    neighbours.resize(num_particles);
-    distances.resize(num_particles);
-    sizes.resize(num_particles);
-
-    std::for_each(std::execution::par_unseq, neighbours.begin(), neighbours.end(), [&](std::vector<unsigned short>& v){
-        v.resize(MAX_NEIGHBOURS);
-    });
-
-    std::for_each(std::execution::par_unseq, distances.begin(), distances.end(), [&](std::vector<float>& v){
-        v.resize(MAX_NEIGHBOURS);
-    });
-
     // create the index array
     indices.resize(num_particles);
     std::iota(indices.begin(), indices.end(), 0);
@@ -48,6 +34,50 @@ void Particles::setupSSBO(){
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, velocitySSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, velocities.size() * sizeof(float), velocities.data(), GL_DYNAMIC_COPY);
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 1, velocitySSBO);
+
+    // previous position
+    glGenBuffers(1, &previousPositionSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, previousPositionSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, previous_positions.size() * sizeof(float), previous_positions.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 2, previousPositionSSBO);
+
+    // predicted position
+    glGenBuffers(1, &predictedPositionSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, predictedPositionSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, predicted_positions.size() * sizeof(float), predicted_positions.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 3, predictedPositionSSBO);
+
+    // predicted velocity
+    glGenBuffers(1, &predictedVelocitySSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, predictedVelocitySSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, predicted_velocities.size() * sizeof(float), predicted_velocities.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 4, predictedVelocitySSBO);
+
+    // density
+    glGenBuffers(1, &densitySSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, densitySSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, densities.size() * sizeof(float), densities.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, densitySSBO);
+
+    // dv
+    glGenBuffers(1, &dvSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, dvSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, dvs.size() * sizeof(float), dvs.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 6, dvSSBO);
+
+    // pressure
+    glGenBuffers(1, &pressureSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, pressureSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, pressures.size() * sizeof(float), pressures.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 7, pressureSSBO);
+
+    // pv
+    glGenBuffers(1, &pvSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, pvSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, pvs.size() * sizeof(float), pvs.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 8, pvSSBO);
+
+
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
 

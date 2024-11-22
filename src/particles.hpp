@@ -31,24 +31,13 @@ private:
     std::vector<float> pressures;
     std::vector<float> pvs;
 
-    // vec2 grid position
-    std::vector<size_t> grid_pos;
-
-    // neighbour information
-    std::vector<std::vector<unsigned short>> neighbours;
-    std::vector<std::vector<float>> distances;
-    std::vector<size_t> sizes;
-
     // index array
     std::vector<size_t> indices;
+    size_t num_particles; 
 
     // constants
     constexpr static size_t MAX_NEIGHBOURS = 64;
 
-
-    std::shared_ptr<std::vector<Point>> particles;
-    size_t num_particles; 
-    unsigned int VBO;
 
 
     friend class Solver;
@@ -57,6 +46,16 @@ private:
 private:
     unsigned int positionSSBO;
     unsigned int velocitySSBO;
+    unsigned int previousPositionSSBO;
+    unsigned int predictedPositionSSBO;
+    unsigned int predictedVelocitySSBO;
+
+    unsigned int densitySSBO;
+    unsigned int dvSSBO;
+    unsigned int pressureSSBO;
+    unsigned int pvSSBO;
+
+
     unsigned int VAO;
 
     /**

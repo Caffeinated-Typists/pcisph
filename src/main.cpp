@@ -74,10 +74,10 @@ int main(){
         ImGui::NewFrame();
 
         
-        // solver.Update();
-        compShader.use();
-        glDispatchCompute(num_particles / 256 + 1, 1, 1);
-        glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+        solver.Update();
+        // compShader.use();
+        // glDispatchCompute(num_particles / 256 + 1, 1, 1);
+        // glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 
         {
