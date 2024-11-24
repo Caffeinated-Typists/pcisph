@@ -2,20 +2,16 @@
 
 layout(local_size_x = 256) in;
 
-layout (std430, binding = 0) buffer Pos {
-    vec2 pos[];
-};
+layout (std430, binding = 0) buffer Pos { vec2 pos[]; };
+layout (std430, binding = 1) buffer Vel { vec2 vel[]; };
+layout (std430, binding = 2) buffer PrevPos { vec2 prevPos[]; };
 
-layout (std430, binding = 1) buffer Vel {
-    vec2 vel[];
-};
-
-layout (std430, binding = 2) buffer PrevPos {
-    vec2 prevPos[];
-};
-
-
+// -----------------------Uniforms-----------------------
 uniform float dt;
+
+// ------------------------------------------------------
+
+
 vec2 gravity = vec2(0.0, -9.8);
 
 void main(){

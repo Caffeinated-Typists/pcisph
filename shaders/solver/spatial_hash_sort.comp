@@ -1,0 +1,94 @@
+#version 460 core
+
+layout(local_size_x = 256) in;
+
+layout (std430, binding = 0) buffer Pos { vec2 pos[]; };
+layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
+layout (std430, binding = 8) buffer SpatialOffset { int spatialOffset[]; };
+
+// -----------------------Uniforms-----------------------
+
+uniform float cellSize;
+uniform int gridWidth;
+uniform int gridHeight;
+
+// int for figuring out which operation to do
+uniform int operation;
+
+// ------------------------------------------------------
+
+// ------- SPATIAL HASHING TEMPLATE -------
+
+const ivec2 offsets[9] = ivec2[](
+    ivec2(0, 0),
+    ivec2(1, 0),
+    ivec2(-1, 0),
+    ivec2(0, 1),
+    ivec2(0, -1),
+    ivec2(1, 1),
+    ivec2(-1, 1),
+    ivec2(1, -1),
+    ivec2(-1, -1)
+);
+
+
+
+ivec2 GetCellPos(vec2 position, float cellSize){
+    int x = int(position.x / cellSize);
+    int y = int(position.y / cellSize);
+    
+    return ivec2(clamp(x, 1, gridWidth - 2), clamp(y, 1, gridHeight - 2));
+}
+
+uint Hash(ivec2 cellPos){
+    return cellPos.x + cellPos.y * gridWidth;
+}
+
+// ---------------------------------------
+
+void UpdateSpatialHash(uint index){
+    if (index >= pos.length()) return;
+    uint numParticles = pos.length();
+
+    
+    vec2 position = pos[index];
+    ivec2 cellPos = GetCellPos(position, cellSize);
+    uint hash = Hash(cellPos);
+
+    spatialIndex[index] = ivec4(index, hash, cellPos.x, cellPos.y);
+}
+
+
+void CalculateOffsets(uint index){
+    if (index >= pos.length()) return;
+
+    uint key = spatialIndex[index].y;
+    uint keyPrev = index == 0? -1 : spatialIndex[index - 1].y;
+
+    if (key != keyPrev){
+        spatialOffset[key] = int(index);
+    }
+}
+
+void ResetOffsets(uint index){
+    if (index >= spatialOffset.length()) return;
+    spatialOffset[index] = -1;
+}
+
+
+void main(){
+    uint index = gl_GlobalInvocationID.x;
+
+    switch(operation){
+        case 0:
+            UpdateSpatialHash(index);
+            break;
+        case 1:
+            ResetOffsets(index);
+            break;
+        case 2:
+            CalculateOffsets(index);
+            break;
+    }
+
+}

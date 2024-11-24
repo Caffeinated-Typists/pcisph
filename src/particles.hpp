@@ -19,11 +19,8 @@ private:
     // vec2
     std::vector<float> positions;
     std::vector<float> velocities;
-
-    // vec2
     std::vector<float> previous_positions;
     std::vector<float> predicted_positions;
-    std::vector<float> predicted_velocities;
 
     // scalar/float
     std::vector<float> densities;
@@ -33,7 +30,13 @@ private:
 
     // index array
     std::vector<size_t> indices;
+    std::vector<size_t> num_neighbours;
     size_t num_particles; 
+
+    // spatial hashing
+    std::vector<int> spatialIndices;
+    std::vector<int> spatialOffsets;
+
 
     // constants
     constexpr static size_t MAX_NEIGHBOURS = 64;
@@ -48,12 +51,16 @@ private:
     unsigned int velocitySSBO;
     unsigned int previousPositionSSBO;
     unsigned int predictedPositionSSBO;
-    unsigned int predictedVelocitySSBO;
 
     unsigned int densitySSBO;
     unsigned int dvSSBO;
     unsigned int pressureSSBO;
     unsigned int pvSSBO;
+
+    unsigned int spatialIndexSSBO; // stores (original index, hash, and key) Stored as (original index, hash, key, 0)
+    unsigned int spatialOffsetSSBO;
+
+    unsigned int numNeighboursSSBO;
 
 
     unsigned int VAO;
@@ -62,6 +69,12 @@ private:
      * @brief Create the SSBO for the particles
      */
     void setupSSBO();
+
+
+    /**
+     * @brief get back the SSBO data
+     */
+    void getSSBOData();
 
 public:
     constexpr static float radius = 0.03f;

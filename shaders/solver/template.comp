@@ -2,40 +2,45 @@
 
 layout(local_size_x = 256) in;
 
-layout (std430, binding = 0) buffer Pos {
-    vec2 pos[];
-};
-
-layout (std430, binding = 1) buffer Vel {
-    vec2 vel[];
-};
-
-layout (std430, binding = 2) buffer PrevPos {
-    vec2 prevPos[];
-};
-
-layout (std430, binding = 3) buffer PredictedPos {
-    vec2 predictedPos[];
-};
-
-layout (std430, binding = 4) buffer PredictedVel {
-    vec2 predictedVel[];
-};
-
-layout (std430, binding = 5) buffer Density {
-    float density[];
-};
-
-layout (std430, binding = 6) buffer Dvs{
-    vec2 dvs[];
-};
-
-layout (std430, binding = 7) buffer Pressure {
-    float pressure[];
-};
-
-layout (std430, binding = 8) buffer Pvs {
-    vec2 pvs[];
-};
+layout (std430, binding = 0) buffer Pos { vec2 pos[]; };
+layout (std430, binding = 1) buffer Vel { vec2 vel[]; };
+layout (std430, binding = 2) buffer PrevPos { vec2 prevPos[]; };
+layout (std430, binding = 3) buffer Density { float densities[]; };
+layout (std430, binding = 4) buffer Dvs { float dvs[]; };
+layout (std430, binding = 5) buffer Pressure { float pressures[]; };
+layout (std430, binding = 6) buffer Pvs { float pvs[]; };
+layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
+layout (std430, binding = 8) buffer SpatialOffset { uint spatialOffset[]; };
 
 uniform float dt;
+// ------- SPATIAL HASHING TEMPLATE -------
+
+const uint hashk1 = 73856093u;
+const uint hashk2 = 19349663u;
+
+const ivec2 offsets[9] = ivec2[](
+    ivec2(0, 0),
+    ivec2(1, 0),
+    ivec2(-1, 0),
+    ivec2(0, 1),
+    ivec2(0, -1),
+    ivec2(1, 1),
+    ivec2(-1, 1),
+    ivec2(1, -1),
+    ivec2(-1, -1)
+);
+
+
+ivec2 GetCellPos(vec2 position, float cellSize){
+    return ivec2(position.x / cellSize, position.y / cellSize);
+}
+
+uint Hash(ivec2 cellPos){
+    return ((cellPos.x * hashk1) ^ (cellPos.y * hashk2));
+}
+
+uint KeyFromHash(uint hash, uint tableSize){
+    return hash & (tableSize - 1);
+}
+
+// ---------------------------------------

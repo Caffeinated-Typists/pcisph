@@ -15,14 +15,33 @@ Solver::Solver(Particles *_particles, float viewport_width, float viewport_heigh
 
     Solver::PARTICLE_MASS = 1.0f;
 
+    glDispatchCompute(num_operations, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);PARTICLE_MASS = 1.0f;
+
     grid_width = (size_t)std::ceil(VIEWPORT_WIDTH / smoothing_length);
     grid_height = (size_t)std::ceil(VIEWPORT_HEIGHT / smoothing_length);
     grid_size = grid_width * grid_height;
     grid.resize(grid_size);
 
-    // GridInsert();
-    externForceAndIntegrateShader = new Shader("./shaders/solver/exforce_integrate.comp");
-    boundaryCheckShader = new Shader("./shaders/solver/boundary_check.comp");
+    num_operations = particles->num_particles / 256 + 1;
+    
+    // resize spatialOffsets
+    particles->spatialOffsets.resize(grid_size);
+    // std::fill(particles->spatialOffsets.begin(), particles->spatialOffsets.end(), -1);
+
+    // set the SSBO for spatial offsets
+    glGenBuffers(1, &particles->spatialOffsetSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialOffsetSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, particles->spatialOffsets.size() * sizeof(int), particles->spatialOffsets.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 8, particles->spatialOffsetSSBO);
+
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+    
+    externForceAndIntegrateShader = new Shader("External Forces", "./shaders/solver/exforce_integrate.comp");
+    boundaryCheckShader = new Shader("Boundary Check", "./shaders/solver/boundary_check.comp");
+    spatialHashingSortShader = new Shader("Spatial Hash", "./shaders/solver/spatial_hash_sort.comp");
+    pressureSolveShader = new Shader("Pressure Solve", "./shaders/solver/pressure_solve.comp");
+    projectionCorrectionShader = new Shader("Projection Correction", "./shaders/solver/projection_correction.comp");
 }
 
 Solver::~Solver(){
@@ -30,22 +49,11 @@ Solver::~Solver(){
 
 
 void Solver::Update(){
-    // logger.logGridLocations();
-    // logger.logFirstNumberOfNeighbours();
-    // logger.logPositions();
-    // logger.checkNegativePositions();
-    // for (int i = 0; i < SOLVER_STEPS; i++){
-    //     ExternalForces();
-    //     Integrate();
-    //     // GridInsert();
-    //     // PressureSolve();
-    //     // ProjectionStep();
-    //     // CorrectionStep();
-    //     BoundaryCheck();
-    // }
-
     for (int i = 0; i < SOLVER_STEPS; i++){
         ExForcesIntegrate();
+        SpatialHashingSort();
+        PressureSolve();
+        ProjectionCorrection();
         BoundaryCheck();
     }
 
@@ -57,7 +65,7 @@ void Solver::BoundaryCheck(){
     boundaryCheckShader->setFloat("viewWidth", VIEWPORT_WIDTH);
     boundaryCheckShader->setFloat("radius", Particles::radius);
 
-    glDispatchCompute(particles->num_particles / 256 + 1, 1, 1);
+    glDispatchCompute(num_operations, 1, 1);
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 }
@@ -66,124 +74,123 @@ void Solver::BoundaryCheck(){
 
 void Solver::ExForcesIntegrate(){
     externForceAndIntegrateShader->use();
-
     externForceAndIntegrateShader->setFloat("dt", DT);
 
-    glDispatchCompute(particles->num_particles / 256 + 1, 1, 1);
+    glDispatchCompute(num_operations, 1, 1);
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 }
 
 
+void Solver::SpatialHashingSort(){
 
-// void Solver::GridInsert(){
-//     // clear the grid
-//     std::for_each(std::execution::par_unseq, grid.begin(), grid.end(), [](Point*& p){
-//         p = nullptr;
-//     });
+    enum class Operation{
+        SPATIAL_HASH, // 0
+        RESET, // 1
+        OFFSETS // 2
+    };
 
-//     std::for_each(std::execution::seq, particles->begin(), particles->end(), [&](Point& p){
-//         p.grid_x = std::clamp((int)(p.position.x / smoothing_length), 1, (int)grid_width - 2);
-//         p.grid_y = std::clamp((int)(p.position.y / smoothing_length), 1, (int)grid_height - 2);
-//         p.next = grid[p.grid_x + grid_width * p.grid_y];
-//         grid[p.grid_x + grid_width * p.grid_y] = &p;
-//     });
+    spatialHashingSortShader->use();
 
-// }
-
-// void Solver::PressureSolve(){
-//     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-//         p.size = 0;
-//         p.density = 0.0f;
-//         p.dv = 0.0f;
-
-//         // size_t idx = &p - &(*particles)[0];
-
-//         // if (idx == 0){
-//         //     std::cout << "particle grid: " << p.grid_x + p.grid_y * grid_width << std::endl;
-//         //     std::cout << "particle position: " << p.position.x << " " << p.position.y << std::endl;
-//         // }
-
-//         for (size_t i = p.grid_x - 1; i <= p.grid_x + 1; i++){
-//             for (size_t j = p.grid_y - 1; j <= p.grid_y + 1; j++){
-//                 int grid_index = i + j * grid_width;
-//                 // if (idx == 0){
-//                 //     std::cout << "neighbour grid: " << grid_index << std::endl;
-//                 // }
-//                 // int cnt = 0;
-//                 // int candidates = 0;
-//                 for(auto pj = grid[i + j * grid_width]; pj != nullptr; pj = pj->next){
-//                     // cnt++;
-//                     if (p.size == Point::MAX_NEIGHBOURS) break;
+    // stage 1: spatial hashing
+    spatialHashingSortShader->setInt("operation", (int)Operation::SPATIAL_HASH);
+    spatialHashingSortShader->setFloat("cellSize", smoothing_length);
+    spatialHashingSortShader->setInt("gridWidth", grid_width);
+    spatialHashingSortShader->setInt("gridHeight", grid_height);
+    glDispatchCompute(num_operations, 1, 1);    
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
 
 
-//                     const Point& neighbour = *pj;
+    // get data from the SSBO
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialIndexSSBO);
+    int* spatial_indices_data = (int*)glMapBuffer(GL_SHADER_STORAGE_BUFFER, GL_READ_ONLY);
+    if (spatial_indices_data){
+        std::copy(spatial_indices_data, spatial_indices_data + particles->num_particles * 4, particles->spatialIndices.begin());
+        glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
+    } else{
+        std::cerr << "Error mapping spatial indices SSBO" << std::endl;
+        return;
+    }
 
-//                     float r2 = glm::dot(p.position - neighbour.position, p.position - neighbour.position);
-                    
-//                     // if (idx == 0){
-//                     //     std::cout << "neighbour position: " << neighbour.position.x << " " << neighbour.position.y << std::endl;
-//                     //     std::cout << "distance: " << r2 << std::endl;
-//                     // }
+    // convert to glm::vec4
+    std::vector<glm::vec4> spatialIndicesVec(particles->num_particles);
+    for (size_t i = 0; i < particles->num_particles; i++){
+        spatialIndicesVec[i] = glm::vec4(spatial_indices_data[i * 4], 
+                                         spatial_indices_data[i * 4 + 1], 
+                                         spatial_indices_data[i * 4 + 2],
+                                         spatial_indices_data[i * 4 + 3]);
+    }
 
-//                     if (r2 > smoothing_length2 || r2 < EPS2) continue;
-//                     // candidates++;
-//                     float r = std::sqrt(r2);
-//                     float a = 1. - r / smoothing_length;
+    // sort the spatial indices
+    std::sort(spatialIndicesVec.begin(), spatialIndicesVec.end(), [](const glm::vec4 &a, const glm::vec3 &b){
+        return a.y < b.y;
+    });
 
-//                     p.density += PARTICLE_MASS * a * a * a * KERNEL_FACTOR;
-//                     p.dv += PARTICLE_MASS * a * a * a * a * KERNEL_NORM;
-
-//                     if (p.size < Point::MAX_NEIGHBOURS){
-//                         p.neighbours[p.size++] = pj - &(*particles)[0];
-//                         p.distances[p.size - 1] = r;
-//                     }
-//                 }
-//                 // if (idx == 0){
-//                 //     std::cout << "neighbours: " << cnt << std::endl;
-//                 //     std::cout << "candidates: " << candidates << std::endl;
-//                 // }
-//             } 
-//         }
-
-//         p.pressure = STIFFNESS * (p.density - REST_DENSITY * PARTICLE_MASS);
-//         p.pv = STIFF_APPROX * p.dv;
-
-//     });
-// }
-
-// void Solver::ProjectionStep(){
-//     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-//         p.predicted_position = p.position;
-//         for (size_t i = 0; i < p.size; i++){
-//             auto& neighbour = (*particles)[p.neighbours[i]];
-//             float r = p.distances[i];
-//             glm::vec2 dx = neighbour.position - p.position;
-
-//             float a = 1. - r / smoothing_length;
-//             float d = DT2 * ((p.pv * neighbour.pv) * a * a * a * KERNEL_NORM + (p.pressure + neighbour.pressure) * a * a * KERNEL_FACTOR) / 2.0f;
-
-//             p.predicted_position -= d * dx / (r * PARTICLE_MASS);
-
-//             // surface tension
-//             p.predicted_position += SURFACE_TENSION * a * a * KERNEL_FACTOR * dx;
-
-//             // viscosity
-//             glm::vec2 dv = neighbour.velocity - p.velocity;
-//             float u = glm::dot(dv, dx);
-//             if (u > 0){
-//                 u /= r;
-//                 float I = 0.5f * DT * a * (LINEAR_VISC * u + QUAD_VISC * u * u);
-//                 p.predicted_position -= I * dx * DT;
-//             }
-//         }
-//     });
-// }
+    for (size_t i = 0; i < particles->num_particles; i++){
+        spatial_indices_data[i * 4] = spatialIndicesVec[i].x;
+        spatial_indices_data[i * 4 + 1] = spatialIndicesVec[i].y;
+        spatial_indices_data[i * 4 + 2] = spatialIndicesVec[i].z;
+        spatial_indices_data[i * 4 + 3] = spatialIndicesVec[i].w;
+    }
 
 
-// void Solver::CorrectionStep(){
-//     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-//         p.position = p.predicted_position;
-//         p.velocity = (p.position - p.previous_position) / DT;
-//     });
-// }
+    // copy back to the SSBO
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialIndexSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, particles->num_particles * 4 * sizeof(int), spatial_indices_data, GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 7, particles->spatialIndexSSBO);
+
+
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+
+    // set offsets to -1
+    spatialHashingSortShader->setInt("operation", (int)Operation::RESET);
+    glDispatchCompute(grid_size / 256 + 1, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+
+
+    // stage 3: offsets
+    spatialHashingSortShader->setInt("operation", (int)Operation::OFFSETS);
+    glDispatchCompute(num_operations, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+
+}
+
+
+void Solver::PressureSolve(){
+    pressureSolveShader->use();
+    pressureSolveShader->setFloat("dt", DT);
+    pressureSolveShader->setFloat("smoothing_length", smoothing_length);
+    pressureSolveShader->setInt("gridWidth", grid_width);
+    pressureSolveShader->setInt("gridHeight", grid_height);
+    pressureSolveShader->setInt("MAX_NEIGHBORS", Particles::MAX_NEIGHBOURS);
+    pressureSolveShader->setFloat("PARTICLE_MASS", PARTICLE_MASS);
+    pressureSolveShader->setFloat("KERNEL_FACTOR", KERNEL_FACTOR);
+    pressureSolveShader->setFloat("KERNEL_NORM", KERNEL_NORM);
+    pressureSolveShader->setFloat("STIFFNESS", STIFFNESS);
+    pressureSolveShader->setFloat("STIFF_APPROX", STIFF_APPROX);
+    pressureSolveShader->setFloat("REST_DENSITY", REST_DENSITY);
+
+    glDispatchCompute(num_operations, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+
+}
+
+void Solver::ProjectionCorrection(){
+    projectionCorrectionShader->use();
+
+    projectionCorrectionShader->setFloat("dt", DT);
+    projectionCorrectionShader->setFloat("smoothing_length", smoothing_length);
+    projectionCorrectionShader->setInt("gridWidth", grid_width);
+    projectionCorrectionShader->setInt("gridHeight", grid_height);
+    projectionCorrectionShader->setInt("MAX_NEIGHBORS", Particles::MAX_NEIGHBOURS);
+    projectionCorrectionShader->setFloat("PARTICLE_MASS", PARTICLE_MASS);
+    projectionCorrectionShader->setFloat("KERNEL_FACTOR", KERNEL_FACTOR);
+    projectionCorrectionShader->setFloat("KERNEL_NORM", KERNEL_NORM);
+    projectionCorrectionShader->setFloat("REST_DENSITY", REST_DENSITY);
+    projectionCorrectionShader->setFloat("LINEAR_VISC", LINEAR_VISC);
+    projectionCorrectionShader->setFloat("QUAD_VISC", QUAD_VISC);
+    projectionCorrectionShader->setFloat("SURFACE_TENSION", SURFACE_TENSION);
+
+    glDispatchCompute(num_operations, 1, 1);
+    glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+}

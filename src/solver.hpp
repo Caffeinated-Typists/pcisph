@@ -70,8 +70,13 @@ private:
     std::vector<Point*> grid;
 
 private:
+    size_t num_operations;
+
     Shader* externForceAndIntegrateShader;
     Shader* boundaryCheckShader;
+    Shader* spatialHashingSortShader;
+    Shader* pressureSolveShader;
+    Shader* projectionCorrectionShader;
 
 
 public:
@@ -95,23 +100,18 @@ public:
     void ExForcesIntegrate();
 
 
-    // /**
-    //  * @brief Update the grid after the particles have been updated, and update the neighbourhood
-    //  */
-    // void GridInsert();
+    /**
+     * @brief perform spatial hashing and sorting
+     */
+    void SpatialHashingSort();
 
-    // /**
-    //  * @brief Pressure solver
-    //  */
-    // void PressureSolve();
+    /**
+     * @brief Pressure solver
+     */
+    void PressureSolve();
 
-    // /**
-    //  * @brief Projection Step
-    //  */
-    // void ProjectionStep();
-
-    // /**
-    //  * @brief Correction Step
-    //  */
-    // void CorrectionStep();
+    /**
+     * @brief Projection and Correction Step
+     */
+    void ProjectionCorrection();
 };

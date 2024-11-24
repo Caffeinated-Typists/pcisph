@@ -1,0 +1,131 @@
+#version 460 core
+
+layout(local_size_x = 256) in;
+
+layout (std430, binding = 0) buffer Pos { vec2 pos[]; };
+layout (std430, binding = 1) buffer Vel { vec2 vel[]; };
+layout (std430, binding = 2) buffer PrevPos { vec2 prevPos[]; };
+layout (std430, binding = 5) buffer Pressure { float pressures[]; };
+layout (std430, binding = 6) buffer Pvs { float pvs[]; };
+layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
+layout (std430, binding = 8) buffer SpatialOffset { int spatialOffset[]; };
+layout (std430, binding = 10) buffer PredictedPos { vec2 predictedPos[]; };
+
+
+// -----------------------Uniforms-----------------------
+uniform float dt;
+uniform int gridWidth;
+uniform int gridHeight;
+uniform int MAX_NEIGHBORS;
+uniform float smoothing_length;
+uniform float PARTICLE_MASS;
+uniform float KERNEL_FACTOR;
+uniform float KERNEL_NORM;
+uniform float REST_DENSITY;
+uniform float LINEAR_VISC;
+uniform float QUAD_VISC;
+uniform float SURFACE_TENSION;
+
+// ------------------------------------------------------
+
+// ------- SPATIAL HASHING TEMPLATE -------
+
+
+const ivec2 offsets[9] = ivec2[](
+    ivec2(0, 0),
+    ivec2(1, 0),
+    ivec2(-1, 0),
+    ivec2(0, 1),
+    ivec2(0, -1),
+    ivec2(1, 1),
+    ivec2(-1, 1),
+    ivec2(1, -1),
+    ivec2(-1, -1)
+);
+
+
+ivec2 GetCellPos(vec2 position, float cellSize){
+    int x = int(position.x / cellSize);
+    int y = int(position.y / cellSize);
+    
+    return ivec2(clamp(x, 1, gridWidth - 2), clamp(y, 1, gridHeight - 2));
+}
+
+
+uint Hash(ivec2 cellPos){
+    return cellPos.x + cellPos.y * gridWidth;
+}
+
+
+// ---------------------------------------
+
+float dt2 = dt * dt;
+uint gridSize = gridWidth * gridHeight;
+float smoothing_length2 = smoothing_length * smoothing_length;
+int numParticles = pos.length();
+float ETA = 1e-5;
+float ETA2 = ETA * ETA;
+
+void main(){
+    uint index = gl_GlobalInvocationID.x;
+
+    if (index >= numParticles) return;
+
+    vec2 position = pos[index];
+    ivec2 grid_index = (GetCellPos(position, smoothing_length));
+
+    vec2 predicted_pos = position;
+
+    int cnt = 0;
+
+    for (int i = 0; i < 9; i++){
+        ivec2 offset = offsets[i];
+        ivec2 cellPos = grid_index + offset;
+        uint key = Hash(cellPos);
+        uint currIndex = spatialOffset[key];       
+
+        while (currIndex < numParticles){
+            ivec4 neighbor_indexData = spatialIndex[currIndex];
+
+            if (neighbor_indexData.y != key) break; // if the key is different, break
+            if (cnt >= MAX_NEIGHBORS) break;
+
+            currIndex++;
+            uint neighborIndex = neighbor_indexData.x; 
+            vec2 neighborPos = pos[neighborIndex];
+            vec2 diff = neighborPos - position;
+            float r2 = dot(diff, diff);
+
+            if (r2 > smoothing_length2 || r2 < ETA2) continue; // outside of smoothing length
+
+            cnt++;
+
+            // Do the calculations
+            float r = sqrt(r2);
+            float a = 1.0 - r / smoothing_length;
+
+            vec2 dx = neighborPos - position;
+            float d = dt2 * ((pvs[index] * pvs[neighborIndex]) * a * a * a * KERNEL_NORM + (pressures[index] + pressures[neighborIndex]) * a * a * KERNEL_FACTOR) / 2.0f;
+            predicted_pos -= d * dx / (r * PARTICLE_MASS);
+
+            // Surface tension
+            predicted_pos += SURFACE_TENSION * a * a * KERNEL_FACTOR * dx;
+
+            // Viscosity
+            vec2 dv = vel[neighborIndex] - vel[index];
+            float u = dot(dv, dx);
+            if (u > 0.0){
+                u /= r;
+                float I = 0.5 * dt * a * (LINEAR_VISC * u + QUAD_VISC * u * u);
+                predicted_pos -= I * dx * dt;
+            }
+
+        } 
+    }
+
+    predictedPos[index] = predicted_pos;
+
+    // Correction step
+    vel[index] = (predicted_pos - prevPos[index]) / dt;
+    pos[index] = predicted_pos;
+}
