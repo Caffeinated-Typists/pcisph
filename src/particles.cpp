@@ -18,7 +18,6 @@ Particles::Particles(std::vector<float> _positions) : positions(_positions){
 
     spatialIndices.resize(num_particles * 2); // stores (original index, hash, and key)
 
-    num_neighbours.resize(num_particles);
 
     // create the index array
     indices.resize(num_particles);
@@ -80,18 +79,6 @@ void Particles::setupSSBO(){
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 7, spatialIndexSSBO);
 
     // // spatial offsets being set in solver
-
-    // Number of neighbours
-    glGenBuffers(1, &numNeighboursSSBO);
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, numNeighboursSSBO);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, num_neighbours.size() * sizeof(int), num_neighbours.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 9, numNeighboursSSBO);
-
-    // prediction position
-    glGenBuffers(1, &predictedPositionSSBO);
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, predictedPositionSSBO);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, predicted_positions.size() * sizeof(float), predicted_positions.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 10, predictedPositionSSBO);
 
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);

@@ -9,7 +9,6 @@ layout (std430, binding = 5) buffer Pressure { float pressures[]; };
 layout (std430, binding = 6) buffer Pvs { float pvs[]; };
 layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
 layout (std430, binding = 8) buffer SpatialOffset { int spatialOffset[]; };
-layout (std430, binding = 10) buffer PredictedPos { vec2 predictedPos[]; };
 
 
 // -----------------------Uniforms-----------------------
@@ -123,7 +122,6 @@ void main(){
         } 
     }
 
-    predictedPos[index] = predicted_pos;
 
     // Correction step
     vel[index] = (predicted_pos - prevPos[index]) / dt;

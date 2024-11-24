@@ -9,7 +9,6 @@ layout (std430, binding = 5) buffer Pressure { float pressures[]; };
 layout (std430, binding = 6) buffer Pvs { float pvs[]; };
 layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
 layout (std430, binding = 8) buffer SpatialOffset { int spatialOffset[]; };
-layout (std430, binding = 9) buffer NumNeighbors { int numNeighbors[]; };
 
 
 // -----------------------Uniforms-----------------------
@@ -109,6 +108,5 @@ void main(){
     pvs[index] = STIFF_APPROX * dv;
     densities[index] = density;
     dvs[index] = dv;
-    numNeighbors[index] = numNeighbor;
 
 }
