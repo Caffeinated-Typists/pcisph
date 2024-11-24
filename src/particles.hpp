@@ -23,14 +23,11 @@ private:
     std::vector<float> predicted_positions;
 
     // scalar/float
-    std::vector<float> densities;
-    std::vector<float> dvs;
     std::vector<float> pressures;
     std::vector<float> pvs;
 
     // index array
     std::vector<size_t> indices;
-    std::vector<size_t> num_neighbours;
     size_t num_particles; 
 
     // spatial hashing

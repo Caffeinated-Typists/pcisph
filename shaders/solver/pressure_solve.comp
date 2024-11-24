@@ -3,8 +3,6 @@
 layout(local_size_x = 256) in;
 
 layout (std430, binding = 0) buffer Pos { vec2 pos[]; };
-layout (std430, binding = 3) buffer Density { float densities[]; };
-layout (std430, binding = 4) buffer Dvs { float dvs[]; };
 layout (std430, binding = 5) buffer Pressure { float pressures[]; };
 layout (std430, binding = 6) buffer Pvs { float pvs[]; };
 layout (std430, binding = 7) buffer SpatialIndex { ivec4 spatialIndex[]; };
@@ -106,7 +104,5 @@ void main(){
 
     pressures[index] = STIFFNESS * (density - REST_DENSITY * PARTICLE_MASS);
     pvs[index] = STIFF_APPROX * dv;
-    densities[index] = density;
-    dvs[index] = dv;
 
 }

@@ -10,8 +10,6 @@ Particles::Particles(std::vector<float> _positions) : positions(_positions){
     predicted_positions.resize(num_particles * 2);
 
 
-    densities.resize(num_particles);
-    dvs.resize(num_particles);
     pressures.resize(num_particles);
     pvs.resize(num_particles);
 
@@ -47,18 +45,6 @@ void Particles::setupSSBO(){
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, previousPositionSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, previous_positions.size() * sizeof(float), previous_positions.data(), GL_DYNAMIC_COPY);
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 2, previousPositionSSBO);
-
-    // density
-    glGenBuffers(1, &densitySSBO);
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, densitySSBO);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, densities.size() * sizeof(float), densities.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 3, densitySSBO);
-
-    // dv
-    glGenBuffers(1, &dvSSBO);
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, dvSSBO);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, dvs.size() * sizeof(float), dvs.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 4, dvSSBO);
 
     // pressure
     glGenBuffers(1, &pressureSSBO);
@@ -101,7 +87,7 @@ void Particles::getSSBOData(){
 
 void Particles::draw(Shader& shader){
     shader.use();
-    getSSBOData();
+    // getSSBOData();
     
     glBindVertexArray(VAO);
     glDrawArrays(GL_POINTS, 0, num_particles);
