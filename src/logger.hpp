@@ -51,25 +51,10 @@ public:
      */
     void checkNegativePositions();
     
+    /**
+     * @brief Log the spatial indices of all particles
+     */
+    void logIndexes();
 
-    // void logFirstPosition();
-    // void logFirstVelocity();
-    // void logGridLocations();
-    // void logFirstNumberOfNeighbours();
-
-    // /**
-    //  * @brief Print information about the particles whose velocity or position is NaN
-    //  */
-    // void logNaNParticles();
-    // void logNaNdV();
-
-    // /**
-    //  * @brief Log the number of particles who have either NaN velocity or position
-    //  */
-    // void logNumNaNPositions();
-    // /**
-    //  * @brief Log average number of neighbours of all particles
-    //  */
-    // void logNumOfNeighbours();
 };
 

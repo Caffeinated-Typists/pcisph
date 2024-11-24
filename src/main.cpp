@@ -21,13 +21,13 @@ int main(){
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     unsigned int VAO;
-    shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
-
+    shader = new Shader("Vertex and Fragment", "./shaders/circle.vert", "./shaders/circle.frag");
     std::vector<float> positions;
 
     // keep all coordinates in the range [-1, 1]
     int particles_per_row = 50;
     int particles_per_col = 50;
+    int num_particles = particles_per_row * particles_per_col;
     positions.reserve(2 * particles_per_row * particles_per_col);
 
 
@@ -56,6 +56,7 @@ int main(){
     shader->use();
     shader->setMat4("projection", projection);
 
+    float dt = 1.0f / (float)(10 * 60);
 
     while (!glfwWindowShouldClose(window)){
         glfwPollEvents();
@@ -77,15 +78,18 @@ int main(){
 
         glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        
+
+
         glDisable(GL_POINT_SMOOTH);
         shader->use();
         shader->setMat4("projection", projection);
-        particles.draw(VAO, *shader);
+
+        particles.draw(*shader);
+
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);
-        // glfwSwapInterval(0);
+        glfwSwapInterval(0);
 
     }
 

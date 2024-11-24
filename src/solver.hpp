@@ -13,6 +13,7 @@
 #include <point.hpp>
 #include <particles.hpp>
 #include <logger.hpp>
+#include <shader.hpp>
 
 class Solver
 {
@@ -68,6 +69,15 @@ private:
     size_t grid_size;
     std::vector<Point*> grid;
 
+private:
+    size_t num_operations;
+
+    Shader* externForceAndIntegrateShader;
+    Shader* boundaryCheckShader;
+    Shader* spatialHashingSortShader;
+    Shader* pressureSolveShader;
+    Shader* projectionCorrectionShader;
+
 
 public:
     Solver() {}
@@ -87,30 +97,21 @@ public:
     /**
      * @brief Apply external forces to the particles, mainly gravity here
      */
-    void ExternalForces();
+    void ExForcesIntegrate();
+
 
     /**
-     * @brief Update the position of the particles using the velocity
+     * @brief perform spatial hashing and sorting
      */
-    void Integrate();
+    void SpatialHashingSort();
 
-    // /**
-    //  * @brief Update the grid after the particles have been updated, and update the neighbourhood
-    //  */
-    // void GridInsert();
+    /**
+     * @brief Pressure solver
+     */
+    void PressureSolve();
 
-    // /**
-    //  * @brief Pressure solver
-    //  */
-    // void PressureSolve();
-
-    // /**
-    //  * @brief Projection Step
-    //  */
-    // void ProjectionStep();
-
-    // /**
-    //  * @brief Correction Step
-    //  */
-    // void CorrectionStep();
+    /**
+     * @brief Projection and Correction Step
+     */
+    void ProjectionCorrection();
 };

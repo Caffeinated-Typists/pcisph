@@ -8,51 +8,87 @@ Particles::Particles(std::vector<float> _positions) : positions(_positions){
     velocities.resize(num_particles * 2);
     previous_positions.resize(num_particles * 2);
     predicted_positions.resize(num_particles * 2);
-    predicted_velocities.resize(num_particles * 2);
 
-    densities.resize(num_particles);
-    dvs.resize(num_particles);
+
     pressures.resize(num_particles);
     pvs.resize(num_particles);
 
-    grid_xs.resize(num_particles);
-    grid_ys.resize(num_particles);
 
-    neighbours.resize(num_particles);
-    distances.resize(num_particles);
-    sizes.resize(num_particles);
+    spatialIndices.resize(num_particles * 2); // stores (original index, hash, and key)
 
-    std::for_each(std::execution::par_unseq, neighbours.begin(), neighbours.end(), [&](std::vector<unsigned short>& v){
-        v.resize(MAX_NEIGHBOURS);
-    });
 
     // create the index array
     indices.resize(num_particles);
     std::iota(indices.begin(), indices.end(), 0);
+
+
+
+
+    setupSSBO();
+}
+
+void Particles::setupSSBO(){
+    // position
+    glGenBuffers(1, &positionSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, positionSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, positions.size() * sizeof(float), positions.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 0, positionSSBO);
+
+    // velocity
+    glGenBuffers(1, &velocitySSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, velocitySSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, velocities.size() * sizeof(float), velocities.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 1, velocitySSBO);
+
+    // previous position
+    glGenBuffers(1, &previousPositionSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, previousPositionSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, previous_positions.size() * sizeof(float), previous_positions.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 2, previousPositionSSBO);
+
+    // pressure
+    glGenBuffers(1, &pressureSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, pressureSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, pressures.size() * sizeof(float), pressures.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 3, pressureSSBO);
+
+    // pv
+    glGenBuffers(1, &pvSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, pvSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, pvs.size() * sizeof(float), pvs.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 4, pvSSBO);
+
+    // spatial indices
+    glGenBuffers(1, &spatialIndexSSBO);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, spatialIndexSSBO);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, spatialIndices.size() * sizeof(int), spatialIndices.data(), GL_DYNAMIC_COPY);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, spatialIndexSSBO);
+
+    // // spatial offsets being set in solver
+
+
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, positionSSBO);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
 }
 
 
 Particles::~Particles(){
 }
 
-void Particles::draw(unsigned int& VAO, Shader& shader){
-    glGenVertexArrays(1, &VAO);
+void Particles::getSSBOData(){
+}
+
+void Particles::draw(Shader& shader){
+    shader.use();
+    // getSSBOData();
+    
     glBindVertexArray(VAO);
-
-
-    // std::cout << "R: " << points[0] << " " << points[1] << std::endl;
-
-    // generate the VBO
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-
-    // use the positions to draw the particles
-    glBufferData(GL_ARRAY_BUFFER, num_particles * 2 * sizeof(float), positions.data(), GL_STATIC_DRAW);
-
-    shader.enableVertexAttribute("aPos");
-    shader.setVertexAttribPointer("aPos", 2, GL_FLOAT, false, 0, 0);
-
-    // draw the particles
     glDrawArrays(GL_POINTS, 0, num_particles);
 }
