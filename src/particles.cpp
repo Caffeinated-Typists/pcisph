@@ -50,19 +50,19 @@ void Particles::setupSSBO(){
     glGenBuffers(1, &pressureSSBO);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, pressureSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, pressures.size() * sizeof(float), pressures.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, pressureSSBO);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 3, pressureSSBO);
 
     // pv
     glGenBuffers(1, &pvSSBO);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, pvSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, pvs.size() * sizeof(float), pvs.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 6, pvSSBO);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 4, pvSSBO);
 
     // spatial indices
     glGenBuffers(1, &spatialIndexSSBO);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, spatialIndexSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, spatialIndices.size() * sizeof(int), spatialIndices.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 7, spatialIndexSSBO);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, spatialIndexSSBO);
 
     // // spatial offsets being set in solver
 

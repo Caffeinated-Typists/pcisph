@@ -33,7 +33,7 @@ Solver::Solver(Particles *_particles, float viewport_width, float viewport_heigh
     glGenBuffers(1, &particles->spatialOffsetSSBO);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialOffsetSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, particles->spatialOffsets.size() * sizeof(int), particles->spatialOffsets.data(), GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 8, particles->spatialOffsetSSBO);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 6, particles->spatialOffsetSSBO);
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
     
@@ -137,7 +137,7 @@ void Solver::SpatialHashingSort(){
     // copy back to the SSBO
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialIndexSSBO);
     glBufferData(GL_SHADER_STORAGE_BUFFER, particles->num_particles * 4 * sizeof(int), spatial_indices_data, GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 7, particles->spatialIndexSSBO);
+    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, particles->spatialIndexSSBO);
 
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
