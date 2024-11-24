@@ -50,32 +50,41 @@ void Logger::logVelocities(){
     logPrint(ss.str(), LogType::INFO);
 }
 
-void Logger::logFirstPosition(){
+void Logger::logDensity(){
     std::stringstream ss;
-    ss << "First Position: " << (*particles)[0].position.x << " " << (*particles)[0].position.y;
-    logPrint(ss.str(), LogType::INFO);
-}
-
-void Logger::logFirstVelocity(){
-    std::stringstream ss;
-    ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y;
-    logPrint(ss.str(), LogType::INFO);
-}
-
-void Logger::logFirstNumberOfNeighbours(){
-    std::stringstream ss;
-    ss << "First Number of Neighbours: " << (*particles)[0].size;
-    logPrint(ss.str(), LogType::INFO);
-}
-
-void Logger::logGridLocations(){
-    std::stringstream ss;
-    ss << "Grid Locations: " << std::endl;
+    ss << "Density: " << std::endl;
     for (auto& p : *particles){
-        ss << "(" << p.grid_x << ", " << p.grid_y << "), ";
+        ss << std::setw(8) << p.density << ", ";
     }
     logPrint(ss.str(), LogType::INFO);
 }
+
+// void Logger::logFirstPosition(){
+//     std::stringstream ss;
+//     ss << "First Position: " << (*particles)[0].position.x << " " << (*particles)[0].position.y;
+//     logPrint(ss.str(), LogType::INFO);
+// }
+
+// void Logger::logFirstVelocity(){
+//     std::stringstream ss;
+//     ss << "First Velocity: " << (*particles)[0].velocity.x << " " << (*particles)[0].velocity.y;
+//     logPrint(ss.str(), LogType::INFO);
+// }
+
+// void Logger::logFirstNumberOfNeighbours(){
+//     std::stringstream ss;
+//     ss << "First Number of Neighbours: " << (*particles)[0].size;
+//     logPrint(ss.str(), LogType::INFO);
+// }
+
+// void Logger::logGridLocations(){
+//     std::stringstream ss;
+//     ss << "Grid Locations: " << std::endl;
+//     for (auto& p : *particles){
+//         ss << "(" << p.grid_x << ", " << p.grid_y << "), ";
+//     }
+//     logPrint(ss.str(), LogType::INFO);
+// }
 
 
 // void Logger::logNaNParticles(){

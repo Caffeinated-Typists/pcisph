@@ -68,6 +68,10 @@ private:
     size_t grid_size;
     std::vector<Point*> grid;
 
+    std::vector<glm::vec4> gridIndices;
+    std::vector<int> gridOffsets;
+
+    glm::ivec2 GetCell(Point& p);
 
 public:
     Solver() {}

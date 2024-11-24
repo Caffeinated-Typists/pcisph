@@ -19,13 +19,14 @@ Solver::Solver(std::shared_ptr<std::vector<Point>> _particles, float viewport_wi
     grid_height = (size_t)std::ceil(VIEWPORT_HEIGHT / smoothing_length);
     grid_size = grid_width * grid_height;
 
-    // resize neighbourhood vectors
-    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
-        p.neighbours.resize(Point::MAX_NEIGHBOURS);
-        p.distances.resize(Point::MAX_NEIGHBOURS);
-    });
+    std::cout << "Grid Width: " << grid_width << std::endl;
+    std::cout << "Grid Height: " << grid_height << std::endl;
+    std::cout << "Grid size: " << grid_size << std::endl;
 
-    grid.resize(grid_size);
+
+    gridIndices.resize(particles->size());
+    gridOffsets.resize(grid_size);
+
 
     GridInsert();
 }
@@ -35,8 +36,6 @@ Solver::~Solver(){
 
 
 void Solver::Update(){
-    // logger.logGridLocations();
-    // logger.logFirstNumberOfNeighbours();
     for (int i = 0; i < SOLVER_STEPS; i++){
         ExternalForces();
         Integrate();
@@ -75,18 +74,35 @@ void Solver::Integrate(){
     });
 }
 
+glm::ivec2 Solver::GetCell(Point& p){
+    p.grid_x = std::clamp((int)(p.position.x / smoothing_length), 1, (int)grid_width - 2);
+    p.grid_y = std::clamp((int)(p.position.y / smoothing_length), 1, (int)grid_height - 2);
+    return glm::ivec2(p.grid_x, p.grid_y);
+}
 
 void Solver::GridInsert(){
-    // clear the grid
-    std::for_each(std::execution::par_unseq, grid.begin(), grid.end(), [](Point*& p){
-        p = nullptr;
+    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+        auto idx = &p - &(*particles)[0];
+        int grid_x = std::clamp((int)(p.position.x / smoothing_length), 1, (int)grid_width - 2);
+        int grid_y = std::clamp((int)(p.position.y / smoothing_length), 1, (int)grid_height - 2);
+        int hash = grid_x + grid_y * grid_width;
+        gridIndices[idx] = glm::ivec4(idx, hash, grid_x, grid_y);
     });
 
-    std::for_each(std::execution::seq, particles->begin(), particles->end(), [&](Point& p){
-        p.grid_x = std::clamp((int)(p.position.x / smoothing_length), 1, (int)grid_width - 2);
-        p.grid_y = std::clamp((int)(p.position.y / smoothing_length), 1, (int)grid_height - 2);
-        p.next = grid[p.grid_x + grid_width * p.grid_y];
-        grid[p.grid_x + grid_width * p.grid_y] = &p;
+    std::sort(gridIndices.begin(), gridIndices.end(), [](const glm::vec4& a, const glm::vec4& b){
+        return a.y < b.y;
+    });
+
+
+    std::fill(gridOffsets.begin(), gridOffsets.end(), -1);
+
+    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+        auto idx = &p - &(*particles)[0];
+        int hash = gridIndices[idx].y;
+        int prevHash = idx == 0 ? -1 : gridIndices[idx - 1].y;
+        if (hash != prevHash){
+            gridOffsets[hash] = idx;
+        }
     });
 
 }
@@ -97,52 +113,42 @@ void Solver::PressureSolve(){
         p.density = 0.0f;
         p.dv = 0.0f;
 
-        // size_t idx = &p - &(*particles)[0];
+        glm::ivec2 grid_index = GetCell(p);
 
-        // if (idx == 0){
-        //     std::cout << "particle grid: " << p.grid_x + p.grid_y * grid_width << std::endl;
-        //     std::cout << "particle position: " << p.position.x << " " << p.position.y << std::endl;
-        // }
+        int cnt = 0;
 
-        for (size_t i = p.grid_x - 1; i <= p.grid_x + 1; i++){
-            for (size_t j = p.grid_y - 1; j <= p.grid_y + 1; j++){
-                int grid_index = i + j * grid_width;
-                // if (idx == 0){
-                //     std::cout << "neighbour grid: " << grid_index << std::endl;
-                // }
-                // int cnt = 0;
-                // int candidates = 0;
-                for(auto pj = grid[i + j * grid_width]; pj != nullptr; pj = pj->next){
-                    // cnt++;
-                    if (p.size == Point::MAX_NEIGHBOURS) break;
+        for (int i = -1; i <= 1; i++){
+            for (int j = -1; j <= 1; j++){
+                glm::ivec2 grid_pos = glm::ivec2(grid_index.x + i, grid_index.y + j);
+                int hash = grid_pos.x + grid_pos.y * grid_width;
+                if (hash < 0 || hash >= grid_size) continue;                
 
+                int currIdx = gridOffsets[hash];
 
-                    const Point& neighbour = *pj;
+                while (currIdx < particles->size()){
+
+                    // if hash of particle is not the same as the current hash, then the particle is not a neighbour
+                    if (gridIndices[currIdx].y != hash) break;
+                    if (cnt >= Point::MAX_NEIGHBOURS) break;
+
+                    const Point& neighbour = (*particles)[gridIndices[currIdx].x];
+                    currIdx++;
 
                     float r2 = glm::dot(p.position - neighbour.position, p.position - neighbour.position);
                     
-                    // if (idx == 0){
-                    //     std::cout << "neighbour position: " << neighbour.position.x << " " << neighbour.position.y << std::endl;
-                    //     std::cout << "distance: " << r2 << std::endl;
-                    // }
 
                     if (r2 > smoothing_length2 || r2 < EPS2) continue;
+
+                    cnt++;
+
                     // candidates++;
                     float r = std::sqrt(r2);
                     float a = 1. - r / smoothing_length;
 
                     p.density += PARTICLE_MASS * a * a * a * KERNEL_FACTOR;
                     p.dv += PARTICLE_MASS * a * a * a * a * KERNEL_NORM;
-
-                    if (p.size < Point::MAX_NEIGHBOURS){
-                        p.neighbours[p.size++] = pj - &(*particles)[0];
-                        p.distances[p.size - 1] = r;
-                    }
+                    
                 }
-                // if (idx == 0){
-                //     std::cout << "neighbours: " << cnt << std::endl;
-                //     std::cout << "candidates: " << candidates << std::endl;
-                // }
             } 
         }
 
@@ -155,28 +161,54 @@ void Solver::PressureSolve(){
 void Solver::ProjectionStep(){
     std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
         p.predicted_position = p.position;
-        for (size_t i = 0; i < p.size; i++){
-            auto& neighbour = (*particles)[p.neighbours[i]];
-            float r = p.distances[i];
-            glm::vec2 dx = neighbour.position - p.position;
+        glm::ivec2 grid_index = GetCell(p);
 
-            float a = 1. - r / smoothing_length;
-            float d = DT2 * ((p.pv * neighbour.pv) * a * a * a * KERNEL_NORM + (p.pressure + neighbour.pressure) * a * a * KERNEL_FACTOR) / 2.0f;
 
-            p.predicted_position -= d * dx / (r * PARTICLE_MASS);
+        int cnt = 0;
+        for (int i = -1; i <= 1; i++){
+            for (int j = -1; j <= 1; j++){
+                glm::vec2 grid_pos = glm::vec2(grid_index.x + i, grid_index.y + j);
+                int hash = grid_pos.x + grid_pos.y * grid_width;
+                if (hash < 0 || hash > grid_size) continue;
 
-            // surface tension
-            p.predicted_position += SURFACE_TENSION * a * a * KERNEL_FACTOR * dx;
+                int currIdx = gridOffsets[hash];
+                while (currIdx < particles->size()){
+                    if (gridIndices[currIdx].y != hash) break;
 
-            // viscosity
-            glm::vec2 dv = neighbour.velocity - p.velocity;
-            float u = glm::dot(dv, dx);
-            if (u > 0){
-                u /= r;
-                float I = 0.5f * DT * a * (LINEAR_VISC * u + QUAD_VISC * u * u);
-                p.predicted_position -= I * dx * DT;
+                    if (cnt >= Point::MAX_NEIGHBOURS) break;
+
+                    const Point& neighbour = (*particles)[gridIndices[currIdx].x];
+                    currIdx++;
+
+                    float r2 = glm::dot(p.position - neighbour.position, p.position - neighbour.position);
+                    if (r2 > smoothing_length2 || r2 < EPS2) continue;
+
+                    cnt++;
+
+
+                    float r = std::sqrt(r2);
+                    glm::vec2 dx = neighbour.position - p.position;
+
+                    float a = 1. - r / smoothing_length;
+                    float d = DT2 * ((p.pv * neighbour.pv) * a * a * a * KERNEL_NORM + (p.pressure + neighbour.pressure) * a * a * KERNEL_FACTOR) / 2.0f;
+
+                    p.predicted_position -= d * dx / (r * PARTICLE_MASS);
+
+                    // surface tension
+                    p.predicted_position += SURFACE_TENSION * a * a * KERNEL_FACTOR * dx;
+
+                    // viscosity
+                    glm::vec2 dv = neighbour.velocity - p.velocity;
+                    float u = glm::dot(dv, dx);
+                    if (u > 0){
+                        u /= r;
+                        float I = 0.5f * DT * a * (LINEAR_VISC * u + QUAD_VISC * u * u);
+                        p.predicted_position -= I * dx * DT;
+                    }
+                }
             }
         }
+
     });
 }
 

@@ -45,6 +45,7 @@ public:
 
     void logPositions();
     void logVelocities();
+    void logDensity();
 
     /**
      * @brief Print information about the particles whose velocity or position is NaN
