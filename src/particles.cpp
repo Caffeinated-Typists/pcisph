@@ -14,7 +14,7 @@ Particles::Particles(std::vector<float> _positions) : positions(_positions){
     pvs.resize(num_particles);
 
 
-    spatialIndices.resize(num_particles * 2); // stores (original index, hash, and key)
+    spatialIndices.resize(num_particles * 4); // stores (original index, hash, and cellPosx, cellPosy)
 
 
     // create the index array
@@ -83,11 +83,28 @@ Particles::~Particles(){
 }
 
 void Particles::getSSBOData(){
+    // print spatialOffsets
+    // glBindBuffer(GL_SHADER_STORAGE_BUFFER, spatialIndexSSBO);
+    // int* spatial_indices_data = (int*)glMapBuffer(GL_SHADER_STORAGE_BUFFER, GL_READ_WRITE);
+    // if (spatial_indices_data){
+    //     std::copy(spatial_indices_data, spatial_indices_data + num_particles * 4, spatialIndices.begin());
+    // } else{
+    //     std::cerr << "Error mapping spatial indices SSBO" << std::endl;
+    //     glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
+    //     return;
+    // }
+
+    // // print spatialIndices
+    // for (size_t i = 0; i < num_particles; i++){
+    //     std::cout << spatialIndices[i * 4] << " " << spatialIndices[i * 4 + 1] << " " << spatialIndices[i * 4 + 2] << " " << spatialIndices[i * 4 + 3] << std::endl;
+    // }
+
+    // glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
 }
 
 void Particles::draw(Shader& shader){
     shader.use();
-    // getSSBOData();
+    getSSBOData();
     
     glBindVertexArray(VAO);
     glDrawArrays(GL_POINTS, 0, num_particles);

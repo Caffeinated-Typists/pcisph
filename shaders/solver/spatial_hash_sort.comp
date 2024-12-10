@@ -79,16 +79,26 @@ void ResetOffsets(uint index){
 void main(){
     uint index = gl_GlobalInvocationID.x;
 
-    switch(operation){
-        case 0:
-            UpdateSpatialHash(index);
-            break;
-        case 1:
-            ResetOffsets(index);
-            break;
-        case 2:
-            CalculateOffsets(index);
-            break;
-    }
+    // switch(operation){
+    //     case 0:
+    //         UpdateSpatialHash(index);
+    //         break;
+    //     // case 1:
+    //     //     ResetOffsets(index);
+    //     //     break;
+    //     case 2:
+    //         CalculateOffsets(index);
+    //         break;
+    // }
+    if (index >= pos.length()) return;
+    uint numParticles = pos.length();
+
+    
+    vec2 position = pos[index];
+    ivec2 cellPos = GetCellPos(position, cellSize);
+    uint hash = Hash(cellPos);
+
+    spatialIndex[index] = ivec4(index, hash, cellPos.x, cellPos.y);
+
 
 }

@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <execution>    
 #include <memory>
+#include <cmath>
 #include <point.hpp>
 #include <particles.hpp>
 #include <logger.hpp>
@@ -37,7 +38,7 @@ private:
     const static int FPS = 60;
     constexpr static float BOUNDARY_THRESHOLD = 1e-3;
     constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
-    constexpr static float DT = 1.0 / (float)(FPS * SOLVER_STEPS);
+    constexpr static float DT = 1.0 / (float)(FPS * SOLVER_STEPS * 2);
     constexpr static float DT2 = DT * DT;
     constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float LINEAR_VISC = 0.5f;
@@ -75,6 +76,9 @@ private:
     Shader* externForceAndIntegrateShader;
     Shader* boundaryCheckShader;
     Shader* spatialHashingSortShader;
+    Shader* bitonicMergeSortShader;
+    Shader* resetOffsetsShader;
+    Shader* spatialOffsetShader;
     Shader* pressureSolveShader;
     Shader* projectionCorrectionShader;
 
@@ -104,6 +108,21 @@ public:
      * @brief perform spatial hashing and sorting
      */
     void SpatialHashingSort();
+
+    /**
+     * @brief Do a bitonic merge sort
+     */
+    void BitonicMergeSort();
+
+    /**
+     * @brief Reset the offsets
+     */
+    void ResetOffsets();
+
+    /**
+     * @brief Calculate the spatial offsets
+     */
+    void SpatialOffsets();
 
     /**
      * @brief Pressure solver
