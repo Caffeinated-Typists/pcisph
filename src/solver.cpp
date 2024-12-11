@@ -23,11 +23,10 @@ Solver::Solver(Particles *_particles, float viewport_width, float viewport_heigh
     grid_size = grid_width * grid_height;
     grid.resize(grid_size);
 
-    num_operations = particles->num_particles / 256 + 1;
+    num_operations = (particles->num_particles + 255)/ 256;
     
     // resize spatialOffsets
     particles->spatialOffsets.resize(grid_size);
-    // std::fill(particles->spatialOffsets.begin(), particles->spatialOffsets.end(), -1);
 
     // set the SSBO for spatial offsets
     glGenBuffers(1, &particles->spatialOffsetSSBO);
@@ -40,6 +39,9 @@ Solver::Solver(Particles *_particles, float viewport_width, float viewport_heigh
     externForceAndIntegrateShader = new Shader("External Forces", "./shaders/solver/exforce_integrate.comp");
     boundaryCheckShader = new Shader("Boundary Check", "./shaders/solver/boundary_check.comp");
     spatialHashingSortShader = new Shader("Spatial Hash", "./shaders/solver/spatial_hash_sort.comp");
+    bitonicMergeSortShader = new Shader("Bitonic Merge Sort", "./shaders/solver/bitonic_merge_sort.comp");
+    resetOffsetsShader = new Shader("Reset Offsets", "./shaders/solver/reset_offsets.comp");
+    spatialOffsetShader = new Shader("Spatial Offsets", "./shaders/solver/spatial_offsets.comp");
     pressureSolveShader = new Shader("Pressure Solve", "./shaders/solver/pressure_solve.comp");
     projectionCorrectionShader = new Shader("Projection Correction", "./shaders/solver/projection_correction.comp");
 }
@@ -52,6 +54,9 @@ void Solver::Update(){
     for (int i = 0; i < SOLVER_STEPS; i++){
         ExForcesIntegrate();
         SpatialHashingSort();
+        BitonicMergeSort();
+        ResetOffsets();
+        SpatialOffsets();
         PressureSolve();
         ProjectionCorrection();
         BoundaryCheck();
@@ -81,78 +86,47 @@ void Solver::ExForcesIntegrate(){
 
 }
 
-
 void Solver::SpatialHashingSort(){
-
-    enum class Operation{
-        SPATIAL_HASH, // 0
-        RESET, // 1
-        OFFSETS // 2
-    };
-
     spatialHashingSortShader->use();
-
-    // stage 1: spatial hashing
-    spatialHashingSortShader->setInt("operation", (int)Operation::SPATIAL_HASH);
     spatialHashingSortShader->setFloat("cellSize", smoothing_length);
     spatialHashingSortShader->setInt("gridWidth", grid_width);
     spatialHashingSortShader->setInt("gridHeight", grid_height);
     glDispatchCompute(num_operations, 1, 1);    
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+}
+
+void Solver::BitonicMergeSort(){
+    bitonicMergeSortShader->use();
+    bitonicMergeSortShader->setInt("numEntries", particles->num_particles);
+    int numStages = (int)ceil(log2(particles->num_particles));
+
+        for (int stageIndex = 0; stageIndex < numStages; stageIndex++)
+        {
+            for (int stepIndex = 0; stepIndex < stageIndex + 1; stepIndex++)
+            {
+                // Calculate some pattern stuff
+                int groupWidth = 1 << (stageIndex - stepIndex);
+                int groupHeight = 2 * groupWidth - 1;
+                bitonicMergeSortShader->setInt("groupWidth", groupWidth);
+                bitonicMergeSortShader->setInt("groupHeight", groupHeight);
+                bitonicMergeSortShader->setInt("stepIndex", stepIndex);
+                glDispatchCompute(1 << (numStages - 1), 1, 1);
+                glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT); 
+            }
+        }
+}
 
 
-    // get data from the SSBO
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialIndexSSBO);
-    int* spatial_indices_data = (int*)glMapBuffer(GL_SHADER_STORAGE_BUFFER, GL_READ_ONLY);
-    if (spatial_indices_data){
-        std::copy(spatial_indices_data, spatial_indices_data + particles->num_particles * 4, particles->spatialIndices.begin());
-        glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
-    } else{
-        std::cerr << "Error mapping spatial indices SSBO" << std::endl;
-        return;
-    }
-
-    // convert to glm::vec4
-    std::vector<glm::vec4> spatialIndicesVec(particles->num_particles);
-    for (size_t i = 0; i < particles->num_particles; i++){
-        spatialIndicesVec[i] = glm::vec4(spatial_indices_data[i * 4], 
-                                         spatial_indices_data[i * 4 + 1], 
-                                         spatial_indices_data[i * 4 + 2],
-                                         spatial_indices_data[i * 4 + 3]);
-    }
-
-    // sort the spatial indices
-    std::sort(spatialIndicesVec.begin(), spatialIndicesVec.end(), [](const glm::vec4 &a, const glm::vec3 &b){
-        return a.y < b.y;
-    });
-
-    for (size_t i = 0; i < particles->num_particles; i++){
-        spatial_indices_data[i * 4] = spatialIndicesVec[i].x;
-        spatial_indices_data[i * 4 + 1] = spatialIndicesVec[i].y;
-        spatial_indices_data[i * 4 + 2] = spatialIndicesVec[i].z;
-        spatial_indices_data[i * 4 + 3] = spatialIndicesVec[i].w;
-    }
-
-
-    // copy back to the SSBO
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, particles->spatialIndexSSBO);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, particles->num_particles * 4 * sizeof(int), spatial_indices_data, GL_DYNAMIC_COPY);
-    glBindBufferBase(GL_SHADER_STORAGE_BUFFER, 5, particles->spatialIndexSSBO);
-
-
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
-
-    // set offsets to -1
-    spatialHashingSortShader->setInt("operation", (int)Operation::RESET);
-    glDispatchCompute(grid_size / 256 + 1, 1, 1);
+void Solver::ResetOffsets(){
+    resetOffsetsShader->use();
+    glDispatchCompute((grid_size + 255) / 256, 1, 1);
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
+}
 
-
-    // stage 3: offsets
-    spatialHashingSortShader->setInt("operation", (int)Operation::OFFSETS);
+void Solver::SpatialOffsets(){
+    spatialOffsetShader->use();
     glDispatchCompute(num_operations, 1, 1);
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);
-
 }
 
 

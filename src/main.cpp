@@ -7,7 +7,7 @@
 Shader* shader;
 int screenWidth = 1280;
 int screenHeight = 720;
-float viewport_width = 12.5f;
+float viewport_width = 20.5f;
 float viewport_height = screenHeight * viewport_width / screenWidth;
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height){
@@ -25,8 +25,8 @@ int main(){
     std::vector<float> positions;
 
     // keep all coordinates in the range [-1, 1]
-    int particles_per_row = 50;
-    int particles_per_col = 50;
+    int particles_per_row = 100;
+    int particles_per_col = 100;
     int num_particles = particles_per_row * particles_per_col;
     positions.reserve(2 * particles_per_row * particles_per_col);
 

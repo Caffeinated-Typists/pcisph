@@ -1,0 +1,18 @@
+#version 460 core
+
+layout(local_size_x = 256) in;
+
+layout (std430, binding = 5) buffer SpatialIndex { ivec4 spatialIndex[]; };
+layout (std430, binding = 6) buffer SpatialOffset { int spatialOffset[]; };
+
+
+void main(){
+    uint index = gl_GlobalInvocationID.x;
+
+    uint key = spatialIndex[index].y;
+    uint keyPrev = index == 0? -1 : spatialIndex[index - 1].y;
+
+    if (key != keyPrev){
+        spatialOffset[key] = int(index);
+    }
+}
