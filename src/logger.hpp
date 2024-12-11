@@ -46,6 +46,11 @@ public:
     void logPositions();
     void logVelocities();
 
+    void logFirstPosition();
+    void logFirstVelocity();
+    void logGridLocations();
+    void logFirstNumberOfNeighbours();
+
     /**
      * @brief Print information about the particles whose velocity or position is NaN
      */

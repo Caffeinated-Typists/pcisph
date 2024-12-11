@@ -62,6 +62,7 @@ void Logger::logFirstVelocity(){
     logPrint(ss.str(), LogType::INFO);
 }
 
+
 void Logger::logFirstNumberOfNeighbours(){
     std::stringstream ss;
     ss << "First Number of Neighbours: " << (*particles)[0].size;
