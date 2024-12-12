@@ -3,8 +3,10 @@
 #include "particles.hpp"
 #include "solver.hpp"
 
+const int MAX_PARTICLES = 6000;
 
 Shader* shader;
+std::vector<Point> points;
 int screenWidth = 1280;
 int screenHeight = 720;
 float viewport_width = 12.5f;
@@ -14,23 +16,10 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height){
     glViewport(0, 0, width, height);
 }
 
-
-int main(){
-    GLFWwindow *window = utils::setupWindow(screenWidth, screenHeight);
-    ImGuiIO &io = ImGui::GetIO();
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    unsigned int VAO;
-    shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
-
-    std::vector<Point> points;
-    points.reserve(30000);
-
-
-    // keep all coordinates in the range [-1, 1]
-    int particles_per_row = 50;
-    int particles_per_col = 50;
-
+void addParticles(int particles_per_row, int particles_per_col){
+    if(MAX_PARTICLES < points.size() + particles_per_row * particles_per_col){
+        return;
+    }
     glm::vec2 start(0.25 * viewport_width, 0.95 * viewport_height);
     float x0 = start.x;
     float spacing = Point::radius;
@@ -42,6 +31,29 @@ int main(){
         start.x = x0;
         start.y -= 2.0f * Point::radius + spacing;
     }
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
+    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS){
+        // logic to add particles and resize the window
+        addParticles(20, 20);
+    }
+}
+
+
+int main(){
+    GLFWwindow *window = utils::setupWindow(screenWidth, screenHeight);
+    ImGuiIO &io = ImGui::GetIO();
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+    unsigned int VAO;
+    shader = new Shader("./shaders/circle.vert", "./shaders/circle.frag");
+
+    points.reserve(30000);
+
+
+    // keep all coordinates in the range [-1, 1]
+    addParticles(50, 50);
 
 
     auto ptr = std::make_shared<std::vector<Point>>(points);
