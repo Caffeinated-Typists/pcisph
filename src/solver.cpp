@@ -64,6 +64,19 @@ void Solver::Update(){
 
 }
 
+void Solver::SetGravity(glm::vec2 gravity){
+    GRAVITY = gravity;
+}
+
+void Solver::SetSurfaceTension(float surface_tension){
+    SURFACE_TENSION = surface_tension;
+}
+
+void Solver::SetRestDensity(float rest_density){
+    REST_DENSITY = rest_density;
+}
+
+
 void Solver::BoundaryCheck(){
     boundaryCheckShader->use();
     boundaryCheckShader->setFloat("dt", DT);
@@ -80,6 +93,7 @@ void Solver::BoundaryCheck(){
 void Solver::ExForcesIntegrate(){
     externForceAndIntegrateShader->use();
     externForceAndIntegrateShader->setFloat("dt", DT);
+    externForceAndIntegrateShader->setFloat2v("gravity", GRAVITY.x, GRAVITY.y);
 
     glDispatchCompute(num_operations, 1, 1);
     glMemoryBarrier(GL_SHADER_STORAGE_BARRIER_BIT);

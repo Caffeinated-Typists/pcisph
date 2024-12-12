@@ -15,7 +15,20 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height){
 }
 
 
-int main(){
+int main(int argc, char *argv[]){
+
+    glm::vec2 gravity = glm::vec2{0.0f, -9.81f};
+    float surface_tension = 1e-4;
+    float rest_density = 45.0f;
+
+    for (int i = 1; i < argc; i++){
+        if      (std::strncmp(argv[i], "--no-g", 6) == 0)       gravity = glm::vec2{0.0f, 0.0f};
+        else if (std::strncmp(argv[i], "--high-st", 9) == 0)    surface_tension = 5e-4;
+        else if (std::strncmp(argv[i], "--high-rd", 9) == 0)    rest_density = 450.0f;
+    }
+
+
+
     GLFWwindow *window = utils::setupWindow(screenWidth, screenHeight);
     ImGuiIO &io = ImGui::GetIO();
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -50,6 +63,11 @@ int main(){
 
     Particles particles(positions);
     Solver solver(&particles, viewport_width, viewport_height);
+
+    // set quantities
+    solver.SetGravity(gravity);
+    solver.SetSurfaceTension(surface_tension);
+    solver.SetRestDensity(rest_density);
 
     glm::mat4 projection = glm::ortho(0.0f, viewport_width, 0.0f, viewport_height, 0.0f, 1.0f);
 

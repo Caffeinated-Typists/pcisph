@@ -40,14 +40,14 @@ private:
     constexpr static float FLUCTUATION_THRESHOLD = 1e-3;
     constexpr static float DT = 1.0 / (float)(FPS * SOLVER_STEPS * 2);
     constexpr static float DT2 = DT * DT;
-    constexpr static glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
     constexpr static float LINEAR_VISC = 0.5f;
     constexpr static float QUAD_VISC = 0.25f;
-    constexpr static float SURFACE_TENSION = 1e-4;
-    constexpr static float REST_DENSITY = 45.0f;
     constexpr static float STIFFNESS = 0.08f;
     constexpr static float STIFF_APPROX = 0.1f;
     
+    glm::vec2 GRAVITY = glm::vec2(0.0f, -9.81f);
+    float SURFACE_TENSION = 1e-4;
+    float REST_DENSITY = 45.0f;
     float PARTICLE_MASS;
 
     constexpr static float smoothing_length = 6 * Point::radius;
@@ -87,6 +87,21 @@ public:
     Solver() {}
     Solver (Particles *particles, float viewport_width, float viewport_height);
     ~Solver();
+
+    /**
+     * @brief set value for gravity
+     */
+    void SetGravity(glm::vec2 gravity);
+
+    /**
+     * @brief set value for surface tension
+     */
+    void SetSurfaceTension(float surface_tension);
+
+    /**
+     * @brief set value for rest density
+     */
+    void SetRestDensity(float rest_density);
 
     /**
      * @brief Update the particles

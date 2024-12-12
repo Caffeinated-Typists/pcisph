@@ -83,23 +83,6 @@ Particles::~Particles(){
 }
 
 void Particles::getSSBOData(){
-    // print spatialOffsets
-    // glBindBuffer(GL_SHADER_STORAGE_BUFFER, spatialIndexSSBO);
-    // int* spatial_indices_data = (int*)glMapBuffer(GL_SHADER_STORAGE_BUFFER, GL_READ_WRITE);
-    // if (spatial_indices_data){
-    //     std::copy(spatial_indices_data, spatial_indices_data + num_particles * 4, spatialIndices.begin());
-    // } else{
-    //     std::cerr << "Error mapping spatial indices SSBO" << std::endl;
-    //     glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
-    //     return;
-    // }
-
-    // // print spatialIndices
-    // for (size_t i = 0; i < num_particles; i++){
-    //     std::cout << spatialIndices[i * 4] << " " << spatialIndices[i * 4 + 1] << " " << spatialIndices[i * 4 + 2] << " " << spatialIndices[i * 4 + 3] << std::endl;
-    // }
-
-    // glUnmapBuffer(GL_SHADER_STORAGE_BUFFER);
 }
 
 void Particles::draw(Shader& shader){
