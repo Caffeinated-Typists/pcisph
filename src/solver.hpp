@@ -22,7 +22,7 @@ private:
     float VIEWPORT_HEIGHT;
 
 private:
-    std::shared_ptr<std::vector<Point>> particles;
+    std::vector<Point> *particles;
     std::vector<float> pos_last;
     std::vector<glm::vec3> boundary;    
 
@@ -71,7 +71,7 @@ private:
 
 public:
     Solver() {}
-    Solver (std::shared_ptr<std::vector<Point>> _particles, float viewport_width, float viewport_height);
+    Solver (std::vector<Point> *_particles, float viewport_width, float viewport_height);
     ~Solver();
 
     /**
@@ -113,4 +113,9 @@ public:
      * @brief Correction Step
      */
     void CorrectionStep();
+
+    /**
+     * @brief Resize neighbourhood for all particles
+     */
+    void ResizeNeighbourhood();
 };

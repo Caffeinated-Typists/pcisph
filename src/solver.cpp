@@ -1,6 +1,6 @@
 #include <solver.hpp>
 
-Solver::Solver(std::shared_ptr<std::vector<Point>> _particles, float viewport_width, float viewport_height)
+Solver::Solver(std::vector<Point> *_particles, float viewport_width, float viewport_height)
     : particles(_particles), logger("log.txt", this){
     
     VIEWPORT_WIDTH = viewport_width;
@@ -31,6 +31,13 @@ Solver::Solver(std::shared_ptr<std::vector<Point>> _particles, float viewport_wi
 }
 
 Solver::~Solver(){
+}
+
+void Solver::ResizeNeighbourhood(){
+    std::for_each(std::execution::par_unseq, particles->begin(), particles->end(), [&](Point& p){
+        p.neighbours.resize(Point::MAX_NEIGHBOURS);
+        p.distances.resize(Point::MAX_NEIGHBOURS);
+    });
 }
 
 

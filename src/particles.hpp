@@ -10,13 +10,13 @@
 class Particles
 {
 private:
-    std::shared_ptr<std::vector<Point>> particles;
-    size_t num_particles; 
+    std::vector<Point> *particles;
+    // size_t num_particles; 
     unsigned int VBO;
 
     float* points;
 public:
-    Particles(std::shared_ptr<std::vector<Point>> _particles);
+    Particles(std::vector<Point> *_particles, int max_particles);
     ~Particles();
 
     /**
@@ -31,6 +31,11 @@ public:
      * 
      * @param n The number of particles to reserve space for
      */
+
+    /**
+     * @brief Add particles to the simulation
+     */
+    void addParticles(std::vector<Point> *points);
 };
 
 
