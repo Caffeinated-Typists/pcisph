@@ -2,6 +2,8 @@
 
 Our implementation of the PCISPH Algorithm, although it does not fully follow the PCISPH Algorithm as outlined in the [paper](https://doi.org/10.1145/1576246.1531346), but closer to [Particle-based Viscoelastic Fluid Simulation](https://doi.org/10.1145/1073368.1073400)
 
+For the final output, please see the [videos](./videos/) folder
+
 ## Steps to run the project
 
 ### Local Build
